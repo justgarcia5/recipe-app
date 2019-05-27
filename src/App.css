@@ -1,3 +1,61 @@
 .App {
   text-align: center;
+  background-color: rgb(245, 242, 239);
+}
+
+.NavBar {
+  text-align: right;
+}
+
+.NavBar li {
+  float: left;
+}
+
+.NavBar a {
+  display: block;
+  color: rgb(12, 10, 10);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 30px;
+}
+
+.NavBar a:hover {
+  color: rgb(44, 124, 48);
+}
+
+.NavBar ul {
+  list-style-type: none;
+  margin: auto;
+  padding: 20px;
+  overflow: hidden;
+  background-image: url('https://www.maxpixel.net/static/photo/1x/Table-Cooking-Background-Herb-Food-Wooden-Knife-2879265.jpg');
+  background-size: 100%;
+}
+
+.card-div {
+  padding: 50px;
+}
+
+.card-div h1{
+  text-decoration: underline
+}
+
+.card-container {
+  border:.5px solid black;
+  width: 400px;
+  height: 160px;
+  margin: auto;
+  background-color: rgba(80, 77, 77, 0.856);
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYdfA5A5pipdHdOmzSo-YHqGk7IVC9fEJ_yXXE72X6JsAQPqiEkg');
+  background-size: 100%;
+  /* opacity: 1; */
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px grey;
+  max-width: 400px;
+  cursor: pointer;
+}
+
+.card-container h2 {
+  color: white;
 }
