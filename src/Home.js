@@ -6,8 +6,9 @@ import DateApi from './components/DateApi'
 function Home() {
   return (
     <div className="App">
-      <h1>Home Page</h1>
-      <DateApi />
+      <div>
+        <DateApi />
+      </div>
     </div>
   );
 }

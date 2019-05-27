@@ -4,17 +4,17 @@ import TodayDate from './TodayDate'
 class DateApi extends React.Component {
   state = {
     errors: null,
+    region: '',
+    city: '',
     date: {
       datetime: '',
       unixtime: '',
       timezone: '',
     },
-    region: '',
-    city: 'New_York'
   }
 
   componentDidMount = () => {
-    fetch(`http://worldtimeapi.org/api/timezone/America/${this.state.city}`)
+    fetch(`http://worldtimeapi.org/api/timezone/America/New_York`)
       .then(res => res.json())
       .then(data => this.setState({ date: data, city: 'Los_Angeles' }))
       .catch(errors => {
@@ -26,7 +26,8 @@ class DateApi extends React.Component {
   DateFetch = () => {
     this.DateTimeToggle()
     fetch(`http://worldtimeapi.org/api/timezone/America/${this.state.city}`, {
-      method: 'GET'
+      method: 'GET',
+      dataType: "JSON"
     }).then(res => res.json())
       .then(data => this.setState({ date: data }))
 
@@ -34,21 +35,16 @@ class DateApi extends React.Component {
 
   DateTimeToggle = () => {
     let { city } = this.state
-    console.log('i was clicked')
     let newCity = city === 'New_York' ? 'Los_Angeles' : 'New_York'
-    // console.log(newCity)
     this.setState({ city: newCity })
-    console.log(this.state.city)
   }
 
   render() {
     let { errors } = this.state
-    // console.log(e)
 
     return (
       <div>
         {errors}
-        <h1>Date</h1>
         <TodayDate
           DateTimeToggle={this.DateFetch}
           date={this.state.date.datetime}
