@@ -6,10 +6,19 @@ const APP_ID = '61f1760b'
 
 class RecipeApi extends React.Component {
   state = {
-    data: [ ],
+    data: [],
+    pop: [],
     responseOk: false,
     search: '',
     errors: null,
+  }
+
+  componentDidMount = () => {
+    fetch(`https://api.edamam.com/search?q=Popular&app_id=${APP_ID}&app_key=${APP_KEY}`)
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ pop: data })
+      })
   }
 
   handleSubmit = (e) => {
@@ -51,6 +60,8 @@ class RecipeApi extends React.Component {
         <LandingImage
           data={this.state.data}
           response={this.state.responseOk}
+          pop={this.state.pop}
+          // recipeFetch={this.recipeFetch()}
         />
       </div>
     )

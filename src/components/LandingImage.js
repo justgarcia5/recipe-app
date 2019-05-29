@@ -1,22 +1,34 @@
 import React from 'react';
 
-const LandingImage = props => {
+class LandingImage extends React.Component {
 
-  return (
-    <div className='landing-image'>
-      <br />
-      <div>
-        {props.response &&
-          <h2 className='search-result'>Results for {props.data.q}</h2>
-        }
-        {props.response &&
-          props.data.hits.map((hit, index) => {
-            return <h2 key={index}>{hit.recipe.label}</h2>
-          })
-        }
+  render() {
+    console.log(this.props.pop)
+
+    return (
+      <div className='landing-image'>
+        <br />
+        <div>
+          {!this.props.response &&
+            <h2 className='search-result'>{this.props.pop.q} Recipes</h2>
+          }
+          {/* {!this.props.response &&
+            this.state.pop.hits.map((hit, index) => {
+              return <h2 key={index}>{hit.recipe.label}</h2>
+            })
+          } */}
+          {this.props.response &&
+            <h2 className='search-result'>Results for {this.props.data.q}</h2>
+          }
+          {this.props.response &&
+            this.props.data.hits.map((hit, index) => {
+              return <h2 key={index}>{hit.recipe.label}</h2>
+            })
+          }
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default LandingImage;
