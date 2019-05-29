@@ -22,7 +22,14 @@ class LandingImage extends React.Component {
           }
           {this.props.response &&
             this.props.data.hits.map((hit, index) => {
-              return <h2 key={index}>{hit.recipe.label}</h2>
+              return (
+                <div key={index} className='recipe-card'>
+                  <ul>
+                    <li><img src={hit.recipe.image} alt='recipe-pic' /></li>
+                    <li>{hit.recipe.label}</li>
+                  </ul>
+                </div>
+              )
             })
           }
         </div>
