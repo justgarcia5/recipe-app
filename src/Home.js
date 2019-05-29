@@ -2,16 +2,17 @@ import React from 'react';
 import './App.css';
 
 import DateApi from './components/DateApi'
-import RecipeApi from './components/Recipe';
+import RecipeApi from './components/RecipeApi';
 
 function Home() {
   return (
     <div className="App">
-      <br/>
+      {/* <br/> */}
       <h1>RecipeApp</h1>
       <DateApi />
       <RecipeApi />
       <br/>
+
     </div>
   );
 }

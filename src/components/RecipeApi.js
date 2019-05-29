@@ -1,11 +1,13 @@
 import React from 'react'
+import LandingImage from './LandingImage'
 
 const APP_KEY = 'b553d12844b50e38e7f0426de87800e2'
 const APP_ID = '61f1760b'
 
 class RecipeApi extends React.Component {
   state = {
-    data: [],
+    data: [ ],
+    responseOk: false,
     search: '',
     errors: null,
   }
@@ -17,14 +19,12 @@ class RecipeApi extends React.Component {
       headers: {
         'Content-Type': 'application/json',
       }
-    })
-      .then(response => response.json())
-      .then(data => this.setState({ data: data }))
+    }).then(response => response.json())
+      .then(data => this.setState({ data: data, responseOk: true }))
       .catch(errors => {
         console.log(errors)
         this.setState({ errors: errors })
       })
-
   }
 
   inputHandler = (e) => {
@@ -34,15 +34,6 @@ class RecipeApi extends React.Component {
 
   render() {
     let { errors } = this.state
-    console.log(this.state.data.params)
-    console.log(this.state.data.count)
-    console.log(this.state.data)
-
-    if(this.state.data.q !== '') {
-      this.state.date.q = <h1>Results for {this.state.data.q}</h1>
-    } else {
-
-    }
 
     return (
       <div>
@@ -57,12 +48,10 @@ class RecipeApi extends React.Component {
           <button type='submit'>Search</button>
         </form>
         {errors}
-        { }
-
-        {this.state.data.recipes}
-        {/* <div> */}
-          {/* {this.state.data.map(val => <h1>{val.hit.recipe.label}</h1>)} */}
-        {/* </div> */}
+        <LandingImage
+          data={this.state.data}
+          response={this.state.responseOk}
+        />
       </div>
     )
   }
