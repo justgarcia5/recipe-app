@@ -1,9 +1,9 @@
 import React from 'react';
 
-const TodayDate = props => {
-  let { timezone, date} = props
-  let newTimezone = timezone === 'America/Los_Angeles' ? 'Los Angeles' : 'New York'
-  let monthFix = date[5] === 0 ? date[5] : null
+const DateTimeCard = props => {
+  let { timezone, date} = props;
+  let newTimezone = timezone === 'America/Los_Angeles' ? 'Los Angeles' : 'New York';
+  let monthFix = date[5] === 0 ? date[5] : null;
 
   return (
     <div className='card-div'>
@@ -16,4 +16,4 @@ const TodayDate = props => {
   )
 }
 
-export default TodayDate;
+export default DateTimeCard;

@@ -1,5 +1,5 @@
 import React from 'react';
-import TodayDate from './TodayDate'
+import DateTimeCard from './DateTimeCard'
 
 class DateApi extends React.Component {
   state = {
@@ -45,7 +45,7 @@ class DateApi extends React.Component {
     return (
       <div>
         {errors}
-        <TodayDate
+        <DateTimeCard
           DateTimeToggle={this.DateFetch}
           date={this.state.date.datetime}
           timezone={this.state.date.timezone}

@@ -5,7 +5,22 @@
   background-size: 100%;
   background-attachment: fixed;
   transform: translateZ(-1px) scale(1);
+  padding-bottom: 60px
+}
 
+.App h1{
+  font-size: 50px;
+  border: 12px solid rgb(44, 124, 48);
+  background-color: white;
+  margin: auto;
+  padding: 20px;
+  width: 700px;
+  border-style: double;
+  border-radius: 9px;
+}
+
+.search-result {
+  font-size: 50px
 }
 
 .NavBar {
@@ -38,7 +53,6 @@
   background-size: 100%;
   background-attachment: fixed;
   transform: translateZ(-1px) scale(1);
-
 }
 
 .card-div {
@@ -55,9 +69,8 @@
   height: 160px;
   margin: auto;
   background-color: rgba(80, 77, 77, 0.856);
-  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYdfA5A5pipdHdOmzSo-YHqGk7IVC9fEJ_yXXE72X6JsAQPqiEkg');
+  background-image: url('https://mackenzienz.com/wp-content/uploads/2015/09/milky-way-Tasman-Valley-cropped1.jpg');
   background-size: 100%;
-  /* opacity: 1; */
   border-radius: 5px;
   box-shadow: 10px 10px 5px grey;
   max-width: 400px;
@@ -78,6 +91,7 @@
   padding: 12px;
   border-radius: 5px;
   background-color: rgb(220, 224, 220);
+  cursor: pointer;
 }
 
 .input-form button:hover {
@@ -89,4 +103,12 @@
   width: 500px;
   height: 50px;
   font-size: 30px;
+}
+
+.landing-image {
+  border: .5px solid white;
+  width: 80%;
+  height: 800px;
+  background-color: white;
+  margin: auto;
 }
