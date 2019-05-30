@@ -10,22 +10,26 @@ class LandingImage extends React.Component {
         <br />
         <div>
           {!this.props.response &&
-            <h2 className='search-result'>{this.props.pop.q} Recipes</h2>
+            <h2 className='search-result-q'>{this.props.pop.q} Recipes</h2>
           }
           {/* {!this.props.response &&
             this.state.pop.hits.map((hit, index) => {
               return <h2 key={index}>{hit.recipe.label}</h2>
             })
           } */}
+        </div>
+        <div>
           {this.props.response &&
-            <h2 className='search-result'>Results for {this.props.data.q}</h2>
+            <h2 className='search-result-q'>Results for {this.props.data.q}...</h2>
           }
+        </div>
+        <div className='search-result-container'>
           {this.props.response &&
             this.props.data.hits.map((hit, index) => {
               return (
                 <div key={index} className='recipe-card'>
                   <ul>
-                    <li><img src={hit.recipe.image} alt='recipe-pic' /></li>
+                    <li><img src={hit.recipe.image} alt='recipe-pic' className='recipe-image' /></li>
                     <li>{hit.recipe.label}</li>
                   </ul>
                 </div>

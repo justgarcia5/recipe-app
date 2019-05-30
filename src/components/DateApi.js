@@ -3,7 +3,7 @@ import DateTimeCard from './DateTimeCard'
 
 class DateApi extends React.Component {
   state = {
-    errors: null,
+    errors: [],
     region: '',
     city: '',
     date: {
@@ -43,7 +43,7 @@ class DateApi extends React.Component {
     let { errors } = this.state
 
     return (
-      <div>
+      <div className='date-card'>
         {errors}
         <DateTimeCard
           DateTimeToggle={this.DateFetch}

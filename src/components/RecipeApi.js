@@ -31,7 +31,7 @@ class RecipeApi extends React.Component {
     }).then(response => response.json())
       .then(data => this.setState({ data: data, responseOk: true }))
       .catch(errors => {
-        console.log(errors)
+        // console.log(response)
         this.setState({ errors: errors })
       })
   }
@@ -45,7 +45,7 @@ class RecipeApi extends React.Component {
     let { errors } = this.state
 
     return (
-      <div>
+      <div className='recipe-input'>
         <form onSubmit={this.handleSubmit} className='input-form'>
           <input
             className='input'
@@ -61,7 +61,7 @@ class RecipeApi extends React.Component {
           data={this.state.data}
           response={this.state.responseOk}
           pop={this.state.pop}
-          // recipeFetch={this.recipeFetch()}
+        // recipeFetch={this.recipeFetch()}
         />
       </div>
     )
