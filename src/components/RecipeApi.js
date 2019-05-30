@@ -1,5 +1,5 @@
 import React from 'react'
-import LandingImage from './LandingImage'
+import LandingImage from './RecipesLanding'
 
 const APP_KEY = 'b553d12844b50e38e7f0426de87800e2'
 const APP_ID = '61f1760b'
@@ -31,7 +31,7 @@ class RecipeApi extends React.Component {
     }).then(response => response.json())
       .then(data => this.setState({ data: data, responseOk: true }))
       .catch(errors => {
-        console.log(error)
+        console.log(errors)
         this.setState({ errors: errors })
       })
   }
