@@ -1,6 +1,6 @@
 import React from 'react';
 
-class LandingImage extends React.Component {
+class RecipesLanding extends React.Component {
 
   render() {
     console.log(this.props.pop)
@@ -42,4 +42,4 @@ class LandingImage extends React.Component {
   }
 }
 
-export default LandingImage;
+export default RecipesLanding;
