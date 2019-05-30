@@ -7,10 +7,18 @@ const RecipeCards = props => {
         props.data.hits.map((hit, index) => {
           return (
             <div key={index} className='recipe-card'>
-              <a href='recipe-detail'>
+              <a href={`/recipe-detail/${index}/${hit.recipe.label}`}>
                 <ul>
                   <li><img src={hit.recipe.image} alt='recipe-pic' className='recipe-image' /></li>
-                  <li>{hit.recipe.label}</li>
+                  <li className='recipe-label'>{hit.recipe.label}</li>
+                  <li>{hit.recipe.source}</li>
+                  {
+                    hit.recipe.dietLabels.map((dietLabel, index ) => {
+                      return (
+                        <li key={index}>{dietLabel}</li>
+                      )
+                    })
+                  }
                 </ul>
               </a>
             </div>
