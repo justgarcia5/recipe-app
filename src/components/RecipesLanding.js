@@ -1,45 +1,32 @@
 import React from 'react';
+import Errors from './Errors'
+import RecipeCards from './RecipeCards';
 
-class RecipesLanding extends React.Component {
-
-  render() {
-    console.log(this.props.pop)
-
-    return (
-      <div className='landing-image'>
-        <br />
-        <div>
-          {!this.props.response &&
-            <h2 className='search-result-q'>{this.props.pop.q} Recipes</h2>
-          }
-          {/* {!this.props.response &&
-            this.state.pop.hits.map((hit, index) => {
-              return <h2 key={index}>{hit.recipe.label}</h2>
-            })
-          } */}
-        </div>
-        <div>
-          {this.props.response &&
-            <h2 className='search-result-q'>Results for {this.props.data.q}...</h2>
-          }
-        </div>
-        <div className='search-result-container'>
-          {this.props.response &&
-            this.props.data.hits.map((hit, index) => {
-              return (
-                <div key={index} className='recipe-card'>
-                  <ul>
-                    <li><img src={hit.recipe.image} alt='recipe-pic' className='recipe-image' /></li>
-                    <li>{hit.recipe.label}</li>
-                  </ul>
-                </div>
-              )
-            })
-          }
-        </div>
+const RecipesLanding = props => {
+  return (
+    <div className='landing-image'>
+      <br />
+      <div>
+        <Errors
+          errors={props.errors}
+        />
       </div>
-    );
-  }
+      <div>
+        {!props.response &&
+          <h2 className='search-result-q'>{props.pop.q} Recipes</h2>
+        }
+      </div>
+      <div>
+        {props.response &&
+          <h2 className='search-result-q'>Results for {props.data.q}...</h2>
+        }
+      </div>
+      <RecipeCards
+        response={props.response}
+        data={props.data}
+      />
+    </div>
+  );
 }
 
 export default RecipesLanding;

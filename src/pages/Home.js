@@ -1,7 +1,7 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 
-import RecipeApi from './components/RecipeApi';
+import RecipeApi from '../components/RecipeApi';
 
 function Home() {
   return (
