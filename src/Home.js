@@ -1,7 +1,6 @@
 import React from 'react';
 import './App.css';
 
-import DateApi from './components/DateApi'
 import RecipeApi from './components/RecipeApi';
 
 function Home() {
@@ -10,7 +9,6 @@ function Home() {
       <div className="Home">
         <h1 >RecipeApp</h1>
       </div>
-      {/* <DateApi /> */}
       <RecipeApi />
       <br />
 
