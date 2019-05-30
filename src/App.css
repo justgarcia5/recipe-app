@@ -62,7 +62,6 @@
   background-color: rgb(245, 242, 239);
   background-image: url('https://www.maxpixel.net/static/photo/1x/Table-Cooking-Background-Herb-Food-Wooden-Knife-2879265.jpg');
   background-size: 100%;
-  /* max-width: 400px; */
   background-attachment: fixed;
   transform: translateZ(-1px) scale(1);
   padding-bottom: 60px
@@ -149,7 +148,6 @@
 .recipe-input {
   list-style-type: none;
   margin: auto;
-  /* padding: 60px; */
   overflow: hidden;
   background-image: url('https://www.maxpixel.net/static/photo/1x/Table-Cooking-Background-Herb-Food-Wooden-Knife-2879265.jpg');
   background-size: 100%;

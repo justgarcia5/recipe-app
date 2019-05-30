@@ -31,7 +31,7 @@ class RecipeApi extends React.Component {
     }).then(response => response.json())
       .then(data => this.setState({ data: data, responseOk: true }))
       .catch(errors => {
-        // console.log(response)
+        console.log(error)
         this.setState({ errors: errors })
       })
   }
@@ -61,7 +61,6 @@ class RecipeApi extends React.Component {
           data={this.state.data}
           response={this.state.responseOk}
           pop={this.state.pop}
-        // recipeFetch={this.recipeFetch()}
         />
       </div>
     )
