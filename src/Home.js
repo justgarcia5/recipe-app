@@ -6,12 +6,13 @@ import RecipeApi from './components/RecipeApi';
 
 function Home() {
   return (
-    <div className="App">
-      {/* <br/> */}
-      <h1>RecipeApp</h1>
-      <DateApi />
+    <div >
+      <div className="Home">
+        <h1 >RecipeApp</h1>
+      </div>
+      {/* <DateApi /> */}
       <RecipeApi />
-      <br/>
+      <br />
 
     </div>
   );
