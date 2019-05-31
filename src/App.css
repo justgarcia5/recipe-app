@@ -182,3 +182,34 @@
   text-align: center;
   margin: 36px;
 }
+
+.recipe-detail-image {
+  height: 500px;
+  width: 500px;
+  margin-left: 90px;
+}
+
+.recipe-detail-title {
+  font-size: 50px;
+  text-align: center;
+}
+
+.recipe-ingredients-list {
+  margin-left: 90px;
+}
+
+.recipe-ingredients-weight {
+  list-style-type: none;
+}
+
+.recipe-health-labels-div {
+  margin-left: 90px;
+}
+
+.recipe-health-labels {
+  list-style-type: none;
+}
+
+.recipe-source {
+  margin-left: 90px;
+}

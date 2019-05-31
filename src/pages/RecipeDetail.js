@@ -23,23 +23,63 @@ class RecipeDetail extends React.Component {
   render() {
 
     return (
-      <div>
+      <div className='recipe-detail'>
         {
           this.state.recipes.map((recipe, index) => {
             return (
               <div key={index}>
-                <p>{recipe.label}</p>
-                <img src={recipe.image} alt='recipe' />
-                <p>{recipe.source}</p>
-                {
-                  recipe.healthLabels.map((label, index) => {
-                    return (
-                      <div key={index}>
-                        <p>{label}</p>
-                      </div>
-                    )
-                  })
-                }
+                <p className='recipe-detail-title'>{recipe.label}</p>
+                <img src={recipe.image} alt='recipe' className='recipe-detail-image' />
+                <p className='recipe-source'>Source: <b>{recipe.source}</b></p>
+                <div className='recipe-health-labels-div'>
+                  <h2>Health Labels</h2>
+                  {
+                    recipe.healthLabels.map((label, index) => {
+                      return (
+                        <div key={index}>
+                          <ul>
+                            <li className='recipe-health-labels'>{label}</li>
+                          </ul>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+                <div className='recipe-ingredients-list'>
+                  <h2>Ingredients</h2>
+                  {
+                    recipe.ingredients.map((ingredient, index) => {
+                      return (
+                        <div key={index}>
+                          <ul>
+                            <li>{ingredient.text}</li>
+                            <li className='recipe-ingredients-weight'>Weight: {Math.floor(ingredient.weight)} grams</li>
+                          </ul>
+                        </div>
+                      )
+                    })
+                  }
+                </div>
+                <h2>Total Calories {Math.floor(recipe.calories)}</h2>
+                <div>
+                  <h2>Nutrients</h2>
+                  <p>{recipe.totalNutrients.ENERC_KCAL.label}</p>
+                  <p>{recipe.totalNutrients.ENERC_KCAL.quantity}</p>
+                  <p>{recipe.totalNutrients.ENERC_KCAL.unit}</p>
+                  {/* {
+                    recipe.totalNutrients.map((nutrient, index) => {
+                      return (
+                        <div key={index}>
+                          <ul>
+                            <li>{nutrient.label}</li>
+                            <li>{nutrient.quantity}</li>
+                            <li>{nutrient.unit}</li>
+                          </ul>
+                        </div>
+                      )
+                    })
+                  } */}
+                </div>
               </div>
             )
           })

@@ -28,7 +28,7 @@ const RecipeCards = props => {
           )
         })
       }
-      {/* {!props.response &&
+      {!props.response &&
         props.popular.map((recipe, index) => {
           return (
             <div key={index} className='recipe-card'>
@@ -49,7 +49,7 @@ const RecipeCards = props => {
             </div>
           )
         })
-      } */}
+      }
     </div>
   )
 }
