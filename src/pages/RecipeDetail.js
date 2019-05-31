@@ -14,21 +14,20 @@ class RecipeDetail extends React.Component {
       .then((data) => {
         let recipes = data.hits.map((hit) => hit.recipe)
         let filteredRecipes = recipes.filter((recipe, index) => {
-          return index === parseInt(this.props.match.params.index)
+          return recipe.label === this.props.match.params.label
         })
         this.setState({ recipes: filteredRecipes })
       })
   }
 
   render() {
-
     return (
       <div className='recipe-detail'>
         {
           this.state.recipes.map((recipe, index) => {
             return (
               <div key={index}>
-                <p className='recipe-detail-title'>{recipe.label}</p>
+                <p className='recipe-detail-title' id='titleo'>{recipe.label}</p>
                 <img src={recipe.image} alt='recipe' className='recipe-detail-image' />
                 <p className='recipe-source'>Source: <b>{recipe.source}</b></p>
                 <div className='recipe-health-labels-div'>
@@ -66,19 +65,6 @@ class RecipeDetail extends React.Component {
                   <p>{recipe.totalNutrients.ENERC_KCAL.label}</p>
                   <p>{recipe.totalNutrients.ENERC_KCAL.quantity}</p>
                   <p>{recipe.totalNutrients.ENERC_KCAL.unit}</p>
-                  {/* {
-                    recipe.totalNutrients.map((nutrient, index) => {
-                      return (
-                        <div key={index}>
-                          <ul>
-                            <li>{nutrient.label}</li>
-                            <li>{nutrient.quantity}</li>
-                            <li>{nutrient.unit}</li>
-                          </ul>
-                        </div>
-                      )
-                    })
-                  } */}
                 </div>
               </div>
             )

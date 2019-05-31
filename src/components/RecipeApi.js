@@ -14,11 +14,10 @@ class RecipeApi extends React.Component {
   }
 
   componentDidMount = () => {
-    fetch(`https://api.edamam.com/search?q=Popular&app_id=${APP_ID}&app_key=${APP_KEY}`)
+    fetch(`https://api.edamam.com/search?q=popular&app_id=${APP_ID}&app_key=${APP_KEY}`)
       .then(response => response.json())
       .then(data => {
         let popularRecipes = data.hits.map((hit) => hit.recipe)
-        console.log(popularRecipes)
         this.setState({ popular: popularRecipes })
       })
   }
