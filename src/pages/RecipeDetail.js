@@ -1,28 +1,49 @@
 import React from 'react';
 
+const APP_KEY = 'b553d12844b50e38e7f0426de87800e2'
+const APP_ID = '61f1760b'
+
 class RecipeDetail extends React.Component {
   state = {
-    recipe: []
+    recipes: []
+  }
+
+  componentDidMount = () => {
+    fetch(`https://api.edamam.com/search?q=${this.props.match.params.label}&app_id=${APP_ID}&app_key=${APP_KEY}`)
+      .then(response => response.json())
+      .then((data) => {
+        let recipes = data.hits.map((hit) => hit.recipe)
+        let filteredRecipes = recipes.filter((recipe, index) => {
+          return index === parseInt(this.props.match.params.index)
+        })
+        this.setState({ recipes: filteredRecipes })
+      })
   }
 
   render() {
-    console.log(this.props)
+
     return (
       <div>
-        {/* {
-        props.data.hits.map((hit, index) => {
-          return (
-            <div key={index} className='recipe-card'>
-              <a href={`/recipe-detail/${hit.recipe.label}`}>
-                <ul>
-                  <li><img src={hit.recipe.image} alt='recipe-pic' className='recipe-image' /></li>
-                  <li>{hit.recipe.label}</li>
-                </ul>
-              </a>
-            </div>
-          )
-        })
-      } */}
+        {
+          this.state.recipes.map((recipe, index) => {
+            return (
+              <div key={index}>
+                <p>{recipe.label}</p>
+                <img src={recipe.image} alt='recipe' />
+                <p>{recipe.source}</p>
+                {
+                  recipe.healthLabels.map((label, index) => {
+                    return (
+                      <div key={index}>
+                        <p>{label}</p>
+                      </div>
+                    )
+                  })
+                }
+              </div>
+            )
+          })
+        }
       </div>
     )
   }

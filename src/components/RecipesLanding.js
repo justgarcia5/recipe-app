@@ -13,7 +13,7 @@ const RecipesLanding = props => {
       </div>
       <div>
         {!props.response &&
-          <h2 className='search-result-q'>{props.pop.q} Recipes</h2>
+          <h2 className='search-result-q'>Popular Recipes</h2>
         }
       </div>
       <div>
@@ -24,6 +24,7 @@ const RecipesLanding = props => {
       <RecipeCards
         response={props.response}
         data={props.data}
+        popular={props.popular}
       />
     </div>
   );
