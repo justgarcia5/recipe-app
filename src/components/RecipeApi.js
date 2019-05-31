@@ -7,7 +7,7 @@ const APP_ID = '61f1760b'
 class RecipeApi extends React.Component {
   state = {
     data: [],
-    pop: [],
+    popular: [],
     responseOk: false,
     search: '',
     errors: null,
@@ -17,7 +17,9 @@ class RecipeApi extends React.Component {
   //   fetch(`https://api.edamam.com/search?q=Popular&app_id=${APP_ID}&app_key=${APP_KEY}`)
   //     .then(response => response.json())
   //     .then(data => {
-  //       this.setState({ pop: data })
+  //       let popularRecipes = data.hits.map((hit) => hit.recipe)
+  //       console.log(popularRecipes)
+  //       this.setState({ popular: popularRecipes })
   //     })
   // }
 
@@ -29,7 +31,7 @@ class RecipeApi extends React.Component {
         'Content-Type': 'application/json',
       }
     }).then(response => response.json())
-      .then(data => this.setState({ data: data, responseOk: true }))
+      .then(data => this.setState({ data: data, responseOk: true, search: ''}))
       .catch(errors => {
         this.setState({ errors: errors })
       })
@@ -59,7 +61,7 @@ class RecipeApi extends React.Component {
         <RecipeLanding
           data={this.state.data}
           response={this.state.responseOk}
-          pop={this.state.pop}
+          popular={this.state.popular}
           errors={errors}
         />
       </div>
