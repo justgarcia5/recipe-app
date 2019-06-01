@@ -25,7 +25,7 @@ class RecipeDetail extends React.Component {
           this.state.recipes.map((recipe, index) => {
             return (
               <div key={index}>
-                <p className='recipe-detail-title' id='titleo'>{recipe.label}</p>
+                <p className='recipe-detail-title' id='title'>{recipe.label}</p>
                 <img src={recipe.image} alt='recipe' className='recipe-detail-image' />
                 <p className='recipe-source'>Source: <b>{recipe.source}</b></p>
                 <div className='recipe-health-labels-div'>

@@ -37,39 +37,6 @@
   transform: translateZ(-1px) scale(1);
 }
 
-.date-card {
-  text-align: center;
-  background-color: rgb(245, 242, 239);
-  background-image: url('https://www.maxpixel.net/static/photo/1x/Table-Cooking-Background-Herb-Food-Wooden-Knife-2879265.jpg');
-  background-size: 100%;
-  background-attachment: fixed;
-  transform: translateZ(-1px) scale(1);
-  padding-bottom: 60px
-}
-
-.date-card-div h1{
-  text-decoration: underline
-}
-
-.date-card-container {
-  border:.5px solid black;
-  max-width: 400px;
-  height: 160px;
-  margin: auto;
-  background-color: rgba(80, 77, 77, 0.856);
-  background-image: url('https://mackenzienz.com/wp-content/uploads/2015/09/milky-way-Tasman-Valley-cropped1.jpg');
-  background-size: 100%;
-  border-radius: 5px;
-  box-shadow: 10px 10px 5px grey;
-  max-width: 400px;
-  cursor: pointer;
-  text-align: center
-}
-
-.date-card-container h2 {
-  color: white;
-}
-
 .input-form {
   margin: 40px auto;
   text-align: center;
