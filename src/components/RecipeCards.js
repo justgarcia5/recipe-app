@@ -14,7 +14,7 @@ const RecipeCards = props => {
                 <ul>
                   <li><img src={hit.recipe.image} alt='recipe-pic' className='recipe-image' /></li>
                   <li className='recipe-label'>{hit.recipe.label}</li>
-                  <li>{hit.recipe.source}</li>
+                  {/* <li>{hit.recipe.source}</li> */}
                   {
                     hit.recipe.dietLabels.map((dietLabel, index ) => {
                       return (
@@ -36,7 +36,7 @@ const RecipeCards = props => {
                 <ul>
                   <li><img src={recipe.image} alt='recipe-pic' className='recipe-image' /></li>
                   <li className='recipe-label'>{recipe.label}</li>
-                  <li>{recipe.source}</li>
+                  {/* <li>{recipe.source}</li> */}
                   {
                     recipe.dietLabels.map((dietLabel, index ) => {
                       return (
