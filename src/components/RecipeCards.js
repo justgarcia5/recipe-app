@@ -42,7 +42,7 @@ const RecipeCards = props => {
                   {
                     recipe.dietLabels.map((dietLabel, index ) => {
                       return (
-                        <li key={index}>{dietLabel}</li>
+                        <li key={index}>*{dietLabel}</li>
                       )
                     })
                   }

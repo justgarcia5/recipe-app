@@ -1,7 +1,4 @@
 import React from 'react'
-// import {
-//   Link,
-// } from 'react-router-dom'
 
 import RecipeLanding from './RecipesLanding'
 
@@ -68,7 +65,6 @@ class RecipeApi extends React.Component {
           errors={errors}
         />
         <div className='bottom-link'>
-          {/* <Link to='/' >RecipeApp</Link> */}
         </div>
       </div>
     )

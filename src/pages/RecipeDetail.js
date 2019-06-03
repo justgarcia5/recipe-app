@@ -26,7 +26,24 @@ class RecipeDetail extends React.Component {
             return (
               <div key={index}>
                 <p className='recipe-detail-title' id='title'>{recipe.label}</p>
-                <img src={recipe.image} alt='recipe' className='recipe-detail-image' />
+                <div className='detail-page-row-1'>
+                  <img src={recipe.image} alt='recipe' className='recipe-detail-image' />
+                  <div className='recipe-ingredients-list'>
+                    <h2>Ingredients</h2>
+                    {
+                      recipe.ingredients.map((ingredient, index) => {
+                        return (
+                          <div key={index}>
+                            <ul>
+                              <li>{ingredient.text}</li>
+                              <li className='recipe-ingredients-weight'>Weight: {Math.floor(ingredient.weight)} grams</li>
+                            </ul>
+                          </div>
+                        )
+                      })
+                    }
+                  </div>
+                </div>
                 <p className='recipe-source'>Source: <b>{recipe.source}</b></p>
                 <div className='recipe-health-labels-div'>
                   <h2>Health Labels</h2>
@@ -36,21 +53,6 @@ class RecipeDetail extends React.Component {
                         <div key={index}>
                           <ul>
                             <li className='recipe-health-labels'>{label}</li>
-                          </ul>
-                        </div>
-                      )
-                    })
-                  }
-                </div>
-                <div className='recipe-ingredients-list'>
-                  <h2>Ingredients</h2>
-                  {
-                    recipe.ingredients.map((ingredient, index) => {
-                      return (
-                        <div key={index}>
-                          <ul>
-                            <li>{ingredient.text}</li>
-                            <li className='recipe-ingredients-weight'>Weight: {Math.floor(ingredient.weight)} grams</li>
                           </ul>
                         </div>
                       )

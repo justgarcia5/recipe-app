@@ -113,14 +113,14 @@
 
 .recipe-card:hover {
   opacity: 1;
-  box-shadow: 3px 3px 1px 1px #757474;
+  box-shadow: 1px 1px 3px 3px #757474;
 
 }
 
 .recipe-card ul {
   margin: 10px auto;
   padding: 0;
-  font-family: Gyre Schola, serif;
+  font-family: Andale Mono, monospace;
   font-size: 20px;
 }
 
@@ -140,9 +140,9 @@
 }
 
 .recipe-detail-image {
-  height: 500px;
-  width: 500px;
-  margin-left: 90px;
+  height: 550px;
+  width: 550px;
+  padding-top: 60px;
 }
 
 .recipe-detail-title {
@@ -173,4 +173,11 @@
 .bottom-link {
   text-align: center;
   margin: 38px auto;
+}
+
+.detail-page-row-1 {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
