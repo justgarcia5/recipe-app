@@ -11,7 +11,7 @@ const NavBar = () => {
           <a href='/'><b>RecipeApp</b></a>
         </li>
         <li>
-          <a href='/about'><b>About</b></a>
+          {/* <a href='/about'><b>About</b></a> */}
         </li>
       </ul>
     </div>

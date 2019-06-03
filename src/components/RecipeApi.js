@@ -1,4 +1,8 @@
 import React from 'react'
+// import {
+//   Link,
+// } from 'react-router-dom'
+
 import RecipeLanding from './RecipesLanding'
 
 const APP_KEY = 'b553d12844b50e38e7f0426de87800e2'
@@ -30,7 +34,7 @@ class RecipeApi extends React.Component {
         'Content-Type': 'application/json',
       }
     }).then(response => response.json())
-      .then(data => this.setState({ data: data, responseOk: true, search: ''}))
+      .then(data => this.setState({ data: data, responseOk: true, search: '' }))
       .catch(errors => {
         this.setState({ errors: errors })
       })
@@ -63,6 +67,9 @@ class RecipeApi extends React.Component {
           popular={this.state.popular}
           errors={errors}
         />
+        <div className='bottom-link'>
+          {/* <Link to='/' >RecipeApp</Link> */}
+        </div>
       </div>
     )
   }
