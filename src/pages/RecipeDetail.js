@@ -15,7 +15,8 @@ class RecipeDetail extends React.Component {
       .then(response => response.json())
       .then((data) => {
         let recipes = data.hits.map((hit) => hit.recipe)
-        let filteredRecipes = recipes.filter((recipe, index) => index === 0 )
+        let filteredRecipeNames = recipes.filter((recipe) => recipe.label === this.props.match.params.label)
+        let filteredRecipes = filteredRecipeNames.filter((recipe, index) => index === 0)
         this.setState({ recipes: filteredRecipes })
         console.log(this.state.recipes)
       })
@@ -32,8 +33,8 @@ class RecipeDetail extends React.Component {
                 <div className='detail-page-row-1'>
                   <div>
                     <img src={recipe.image} alt='recipe' className='recipe-detail-image' />
-                    <p><b>Source: {recipe.source}</b></p>
-                    <p><b>Total Calories</b> {Math.floor(recipe.calories)}</p>
+                    <p><b>Source:</b> {recipe.source}</p>
+                    <p><b>Total Calories:</b> {Math.floor(recipe.calories)}</p>
                     {/* <p>Total weight {Math.floor(recipe.totalWeight)} g</p>
                     <p>Total time {recipe.totalTime}</p> */}
                   </div>
