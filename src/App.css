@@ -1,7 +1,7 @@
 .search-result-q {
   font-size: 50px;
   text-align: center;
-  font-family: Impact, fantasy;
+  font-family: DejaVu Sans Mono, monospace;
 
 }
 
@@ -27,7 +27,7 @@
   color: rgb(12, 10, 10);
   text-decoration: none;
   font-size: 55px;
-  font-family: Impact, fantasy;
+  font-family: DejaVu Sans Mono, monospace;
 }
 
 @media screen and (max-width: 500px) {
