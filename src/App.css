@@ -1,18 +1,20 @@
 .search-result-q {
   font-size: 50px;
   text-align: center;
-  font-family: Impact, fantasy
+  font-family: Impact, fantasy;
+
+}
+
+@media screen and (max-width: 500px) {
+  .search-result-q {
+    margin: 0;
+  }
 }
 
 .NavBar {
   text-align: right;
 }
 
-@media screen and (max-width: 500px) {
-  .NavBar ul a {
-    font-size: 30px;
-  }
-}
 
 .NavBar li {
   float: left;
@@ -22,9 +24,8 @@
   display: block;
   color: rgb(12, 10, 10);
   text-align: center;
-  padding: 14px 16px;
   text-decoration: none;
-  font-size: 55px;
+  font-size: 35px;
   font-family: Impact, fantasy
 }
 
@@ -122,7 +123,7 @@
 
 @media screen and (max-width: 570px) {
   .recipe-image {
-    width: 200px;
+    width: 260px;
   }
 }
 
@@ -151,8 +152,8 @@
 
 @media screen and (max-width: 500px) {
   .recipe-card {
-    width: 200px;
-    height: 340px
+    width: 260px;
+    height: 420px;
   }
 }
 
