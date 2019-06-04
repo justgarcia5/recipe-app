@@ -1,12 +1,17 @@
 .search-result-q {
   font-size: 50px;
   text-align: center;
-  /* font-style: italic; */
   font-family: Impact, fantasy
 }
 
 .NavBar {
   text-align: right;
+}
+
+@media screen and (max-width: 500px) {
+  .NavBar ul a {
+    font-size: 30px;
+  }
 }
 
 .NavBar li {
@@ -53,6 +58,18 @@
 
 }
 
+@media screen and (max-width: 700px) {
+  .input-form-button {
+    font-size: 15px;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(220, 224, 220);
+    cursor: pointer;
+
+  }
+}
+
 .input-form-button:hover {
   background-color:  rgb(44, 124, 48);
   color: white;
@@ -66,12 +83,27 @@
   border-radius: 5px;
 }
 
+@media screen and (max-width: 700px) {
+  .input {
+    width: 220px;
+    height: 30px;
+    font-size: 16px
+  }
+}
+
+
 .landing-image {
-  border: .5px solid white;
+  border: .5px solid rgb(207, 203, 203);
   max-width: 80%;
-  margin: 40px auto;
+  margin: auto;
   border-radius: 5px;
   background-color: rgb(207, 203, 203);
+}
+
+@media screen and (max-width: 500px) {
+  .landing-image {
+    max-width: 100%;
+  }
 }
 
 .search-result-container {
@@ -86,6 +118,12 @@
   border-radius: 5px;
   max-height: 340px;
   max-width: 340px;
+}
+
+@media screen and (max-width: 570px) {
+  .recipe-image {
+    width: 200px;
+  }
 }
 
 .recipe-label {
@@ -103,12 +141,19 @@
 }
 
 .recipe-card {
-  margin: 20px auto;
-  padding: 20px;
+  margin: 30px auto;
+  padding: 30px;
   border-radius: 5px;
   width: 300px;
   opacity: .9;
   background-color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .recipe-card {
+    width: 200px;
+    height: 340px
+  }
 }
 
 .recipe-card:hover {
@@ -140,9 +185,19 @@
 }
 
 .recipe-detail-image {
-  height: 550px;
   width: 550px;
-  padding-top: 60px;
+  height: 550px;
+  padding-top: 70px;
+  margin-right: 60px;
+}
+
+@media screen and (max-width: 500px) {
+  .recipe-detail-image {
+    max-width: 300px;
+    max-height: 300px;
+    padding: 0;
+    margin: 16px auto;
+  }
 }
 
 .recipe-detail-title {
@@ -150,8 +205,19 @@
   text-align: center;
 }
 
+@media screen and (max-width: 500px) {
+  .recipe-detail-title {
+    font-size: 30px;
+    text-align: center;
+    margin: 10px auto;
+    width: 300px
+  }
+}
+
 .recipe-ingredients-list {
-  margin-left: 90px;
+  margin-left: 70px;
+  width: 550px;
+  /* margin-right: 50px; */
 }
 
 .recipe-ingredients-weight {
@@ -167,7 +233,8 @@
 }
 
 .recipe-source {
-  margin-left: 90px;
+  margin-left: 280px;
+  padding: 30px
 }
 
 .bottom-link {
@@ -180,4 +247,8 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.recipe-detail-url {
+  text-align: center;
 }
