@@ -35,7 +35,6 @@
     color: rgb(12, 10, 10);
     text-decoration: none;
     font-size: 20px;
-    /* font-family: Impact, fantasy; */
     text-align: center;
   }
 }
@@ -45,15 +44,9 @@
 }
 
 .NavBar ul {
-  /* background-color: rgb(207, 203, 203); */
   list-style-type: none;
   margin: auto;
   padding: 20px;
-  overflow: hidden;
-  /* background-image: url('https://taekwondoamerica.org/wp-content/uploads/2018/04/Warm-Background.png'); */
-  background-size: 100%;
-  background-attachment: fixed;
-  transform: translateZ(-1px) scale(1);
 }
 
 .input-form {
