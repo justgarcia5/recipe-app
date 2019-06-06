@@ -113,8 +113,8 @@
 
 
 .landing-image {
-  border: .5px solid rgb(207, 203, 203);
-  max-width: 80%;
+  border: 12px solid grey;
+  max-width: 88%;
   margin: auto;
   border-radius: 5px;
   background-color: rgb(207, 203, 203);
