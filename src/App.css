@@ -124,6 +124,7 @@
   .landing-image {
     max-width: 100%;
     background-color: white;
+    border: 0
   }
 }
 
