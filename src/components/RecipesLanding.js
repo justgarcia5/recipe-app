@@ -6,6 +6,7 @@ import RecipeCards from './RecipeCards';
 const RecipesLanding = props => {
   return (
     <div className='landing-image'>
+      <br/>
       <div>
         <Errors
           errors={props.errors}

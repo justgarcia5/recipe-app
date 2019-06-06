@@ -78,7 +78,7 @@
 
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 788px) {
   .input-form-button {
     font-size: 15px;
     margin-left: 20px;
@@ -103,7 +103,7 @@
   border-radius: 5px;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 788px) {
   .input {
     width: 220px;
     height: 30px;
@@ -123,6 +123,7 @@
 @media screen and (max-width: 500px) {
   .landing-image {
     max-width: 100%;
+    background-color: white;
   }
 }
 
@@ -153,11 +154,6 @@
 .recipe-input {
   list-style-type: none;
   margin: auto;
-  overflow: hidden;
-  background-image: url('https://taekwondoamerica.org/wp-content/uploads/2018/04/Warm-Background.png');
-  background-size: 100%;
-  background-attachment: fixed;
-  transform: translateZ(-1px) scale(1);
 }
 
 .recipe-card {
@@ -173,6 +169,8 @@
   .recipe-card {
     width: 260px;
     height: 420px;
+    margin: 0;
+    border-top: 1px grey;
   }
 }
 
