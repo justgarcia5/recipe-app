@@ -30,6 +30,7 @@ class RecipeDetail extends React.Component {
             return (
               <div key={index}>
                 <p className='recipe-detail-title' id='title'>{recipe.label}</p>
+                <hr/>
                 <div className='detail-page-row-1'>
                   <div>
                     <img src={recipe.image} alt='recipe' className='recipe-detail-image' />
