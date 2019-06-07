@@ -16,7 +16,7 @@ const Routes = () => {
         <div>
           <Switch>
             <Route path='/' exact component={Home} />
-            <Route path='/recipe-detail/:index/:label' exact render={props => <RecipeDetail {...props} />} />
+            <Route path='/recipe-detail/:index/:label' exact component={RecipeDetail} />} />
             <Route render={() => <p className='not-found'>Page not found!</p>} />
           </Switch>
         </div>
