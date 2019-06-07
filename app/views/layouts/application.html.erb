@@ -11,7 +11,14 @@
   </head>
 
   <body>
-    <%= react_component 'NavBar' %>
+    <% if user_signed_in? %>
+      <%= react_component "NavBar", current_user: {
+        id: current_user.id,
+        email: current_user.email,
+      } %>
+    <% else %>
+      <%= react_component 'NavBar', props: {'logged_in': false}%>
+    <% end %>
     <%= yield %>
   </body>
 </html>
