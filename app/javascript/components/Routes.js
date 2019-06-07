@@ -12,6 +12,7 @@ import RecipeDetail from '../pages/RecipeDetail';
 const Routes = () => {
   return (
     <div>
+
       <Router>
         <div>
           <Switch>
