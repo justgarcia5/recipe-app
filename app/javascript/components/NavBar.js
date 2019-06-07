@@ -15,7 +15,7 @@ const NavBar = props => {
         {!current_user &&
           <React.Fragment>
             <a href='/' className='NavBar-home'> <li><b>RecipeApp</b></li></a>
-            <a href="/users/sign_in" rel="nofollow" data-method="delete"><li className="navi-element sign-out"><b>Login</b></li></a>
+            <a href="/users/sign_in"><li className="navi-element sign-out"><b>Login</b></li></a>
           </React.Fragment>
         }
       </ul>
