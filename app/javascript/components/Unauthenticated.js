@@ -1,12 +1,13 @@
 import React from 'react';
 
-import Routes from './Routes'
+import Home from '../pages/Home'
 
 class Unauthenticated extends React.Component {
   render () {
     return (
       <div>
-        <Routes />
+        <h1>Unauthenticated</h1>
+        <Home />
       </div>
     )
   }
