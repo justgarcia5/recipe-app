@@ -1,0 +1,313 @@
+.search-result-q {
+  font-size: 50px;
+  text-align: center;
+  padding-top: 36px;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+}
+
+@media screen and (max-width: 500px) {
+  .search-result-q {
+    margin: 0;
+    padding-top: 17px;
+    font-size: 20px;
+  }
+}
+
+.NavBar {
+  text-align: right;
+  height: 75px;
+  background-color: rgb(181, 211, 157);
+}
+
+@media screen and (max-width: 500px) {
+  .NavBar {
+    background-color: white;
+  }
+}
+
+.NavBar li {
+  float: left;
+}
+
+.NavBar a {
+  display: block;
+  color: rgb(12, 10, 10);
+  text-decoration: none;
+  font-size: 35px;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+}
+
+@media screen and (max-width: 500px) {
+  .NavBar b {
+    display: block;
+    color: rgb(12, 10, 10);
+    text-decoration: none;
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.NavBar a:hover {
+  color: white;
+}
+
+.NavBar ul {
+  list-style-type: none;
+  margin: auto;
+  padding: 20px;
+}
+
+.input-form {
+  margin: 40px auto;
+  text-align: center;
+}
+
+@media screen and (max-width: 700px) {
+  .input-form {
+    text-align: center;
+    margin: 0;
+  }
+}
+
+.input-form-button {
+  font-size: 28px;
+  margin-left: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: rgb(220, 224, 220);
+  cursor: pointer;
+
+}
+
+@media screen and (max-width: 788px) {
+  .input-form-button {
+    font-size: 15px;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(220, 224, 220);
+    cursor: pointer;
+
+  }
+}
+
+.input-form-button:hover {
+  background-color:  rgb(44, 124, 48);
+  color: white;
+}
+
+.input {
+  width: 700px;
+  height: 50px;
+  font-size: 30px;
+  margin: 14px auto;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 788px) {
+  .input {
+    width: 220px;
+    height: 30px;
+    font-size: 16px;
+  }
+}
+
+
+.landing-image {
+  max-width: 88%;
+  margin: auto;
+  border-radius: 5px;
+  background-color: rgb(231, 228, 228);
+}
+
+@media screen and (max-width: 500px) {
+  .landing-image {
+    max-width: 100%;
+    background-color: white;
+    border: 0
+  }
+}
+
+.search-result-container {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.recipe-image {
+  border-radius: 5px;
+  max-height: 350px;
+  max-width: 350px;
+}
+
+@media screen and (max-width: 570px) {
+  .recipe-image {
+    width: 260px;
+  }
+}
+
+.recipe-label {
+  margin: 20px auto;
+}
+
+.recipe-input {
+  list-style-type: none;
+  margin: auto;
+}
+
+.recipe-card {
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 5px;
+  width: 300px;
+  opacity: .9;
+  background-color: white;
+}
+
+@media screen and (max-width: 500px) {
+  .recipe-card {
+    width: 260px;
+    height: 420px;
+    margin: 0;
+    border-top: 1px grey;
+  }
+}
+
+.recipe-card:hover {
+  opacity: 1;
+  box-shadow: 1px 1px 3px 3px #757474;
+
+}
+
+.recipe-card ul {
+  margin: 10px auto;
+  padding: 0;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-size: 20px;
+}
+
+.recipe-card li {
+  list-style-type: none;
+}
+
+.recipe-card a {
+  text-decoration: none;
+  color: black;
+}
+
+.not-found {
+  font-size: 50px;
+  text-align: center;
+  margin: 36px;
+}
+
+.recipe-detail-image {
+  width: 550px;
+  height: 550px;
+  padding-top: 40px;
+  margin-right: 40px;
+}
+
+@media screen and (max-width: 500px) {
+  .recipe-detail-image {
+    max-width: 300px;
+    max-height: 300px;
+    padding: 0;
+    margin: 16px auto;
+  }
+}
+
+.recipe-detail-title {
+  font-size: 50px;
+  text-align: center;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+}
+
+@media screen and (max-width: 500px) {
+  .recipe-detail-title {
+    font-size: 30px;
+    text-align: center;
+    margin: 10px auto;
+    width: 300px;
+  }
+}
+
+.recipe-ingredients-list {
+  margin-left: 70px;
+  width: 550px;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .recipe-ingredients-list {
+    margin: 10px auto;
+    padding: 10px;
+  }
+}
+
+.recipe-ingredients-weight {
+  list-style-type: none;
+}
+
+.recipe-health-labels-div {
+  margin-left: 90px;
+}
+
+.recipe-health-labels {
+  list-style-type: none;
+}
+
+.recipe-source {
+  margin-left: 280px;
+  padding: 30px;
+}
+
+.bottom-link {
+  text-align: center;
+  margin: 38px auto;
+}
+
+.detail-page-row-1 {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.recipe-detail-url {
+  text-align: center;
+}
+
+table, th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.recipe-detail-nutrients {
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.total-nutrients {
+  margin: 100px;
+}
+@media screen and (max-width: 500px) {
+  .total-nutrients {
+    margin: 10px auto;
+
+  }
+}
+
+.daily-nutrients {
+  margin: 100px;
+}
+
+@media screen and (max-width: 500px) {
+  .daily-nutrients {
+    margin: 10px;
+  }
+}
