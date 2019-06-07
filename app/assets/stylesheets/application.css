@@ -25,16 +25,13 @@
   }
 }
 
-.NavBar li {
-  float: left;
-}
-
-.NavBar a {
+.NavBar-home {
   display: block;
   color: rgb(12, 10, 10);
   text-decoration: none;
   font-size: 35px;
   font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  float: left;
 }
 
 @media screen and (max-width: 500px) {
