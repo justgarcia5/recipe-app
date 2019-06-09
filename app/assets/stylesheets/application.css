@@ -308,3 +308,141 @@ table, th, td {
     margin: 10px;
   }
 }
+
+.login-container {
+  /* border: 2px solid black; */
+  padding-top: 20px;
+  margin: 60px auto;
+  width: 500px;
+  height: 600px;
+  background-color: rgb(231, 228, 228);
+
+}
+
+.login-title {
+  font-size: 35px;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.login-hr {
+  border: 1px solid grey;
+  width: 400px;
+}
+
+.field {
+  margin: 20px auto;
+  font-size: 18px;
+  text-align: left;
+  padding-left: 100px;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+}
+
+.input-small {
+  width: 300px;
+  height: 30px;
+  font-size: 20px;
+}
+
+.actions {
+  text-align: center;
+}
+
+.login-button {
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: rgb(220, 224, 220);
+  cursor: pointer;
+  text-align: center;
+}
+
+@media screen and (max-width: 788px) {
+  .login-button {
+    font-size: 15px;
+    margin-left: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(220, 224, 220);
+    cursor: pointer;
+
+  }
+}
+
+.login-button:hover {
+  background-color:  rgb(44, 124, 48);
+  color: white;
+}
+
+.additional-links {
+  margin: 20px auto;
+  text-align: center;
+}
+
+.edit-user-title {
+  text-align: center;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-size: 35px;
+}
+
+.delete-button {
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: rgb(220, 224, 220);
+  cursor: pointer;
+  text-align: center;
+  margin-left: 13px;
+}
+
+.delete-button:hover {
+  background-color:  red;
+  color: white;
+}
+
+.forgot-password-title {
+  text-align: center;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-size: 35px;
+}
+
+.reset-button {
+  font-size: 20px;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: rgb(220, 224, 220);
+  cursor: pointer;
+  text-align: center;
+}
+
+.reset-button:hover {
+  background-color:  rgb(44, 124, 48);
+  color: white;
+}
+
+.devise-links a {
+  text-align: center;
+}
+
+.error-div {
+  width: 700px;
+  border-radius: 6px;
+  padding: 1px 2px 8px 12px;
+  margin: 30px auto;
+  background-color: #EAB6B6;
+}
+
+.error-header {
+  font-size: 18pt;
+  font-weight: bold;
+}
+
+.error-text {
+  font-size: 11pt;
+  color: red;
+}
+
+.error-list {
+  margin-top: -14px;
+}

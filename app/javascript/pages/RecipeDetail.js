@@ -18,7 +18,9 @@ class RecipeDetail extends React.Component {
         let filteredRecipeNames = recipes.filter((recipe) => recipe.label === this.props.match.params.label)
         let filteredRecipes = filteredRecipeNames.filter((recipe, index) => index === 0)
         this.setState({ recipes: filteredRecipes })
-        console.log(this.state.recipes)
+      })
+      .catch(errors => {
+        this.setState({responseOk: false, errors: {"System Error": ["Unknown problem has occurred"]}})
       })
   }
 
