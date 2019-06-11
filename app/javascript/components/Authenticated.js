@@ -14,7 +14,6 @@ class Authenticated extends React.Component {
   render() {
     return (
       <div>
-        <h1>Authenticated</h1>
         <Router>
           <div>
             <Switch>

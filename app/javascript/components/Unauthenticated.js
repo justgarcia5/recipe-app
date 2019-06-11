@@ -13,7 +13,6 @@ class Unauthenticated extends React.Component {
   render() {
     return (
       <div>
-        <h1>Unauthenticated</h1>
         <Router>
           <div>
             <Switch>
