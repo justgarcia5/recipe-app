@@ -359,7 +359,7 @@ table, th, td {
 .input-small {
   width: 300px;
   height: 30px;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .actions {
@@ -367,34 +367,39 @@ table, th, td {
 }
 
 .login-button {
-  font-size: 20px;
+  font-size: 12px;
   padding: 8px;
   border-radius: 5px;
-  background-color: rgb(220, 224, 220);
+  background-color: rgb(181, 211, 157);
   cursor: pointer;
   text-align: center;
 }
 
 @media screen and (max-width: 788px) {
   .login-button {
-    font-size: 15px;
+    font-size: 10px;
     margin-left: 20px;
-    padding: 10px;
+    padding: 8px;
     border-radius: 5px;
-    background-color: rgb(220, 224, 220);
+    background-color: rgb(181, 211, 157);
     cursor: pointer;
 
   }
 }
 
 .login-button:hover {
-  background-color:  rgb(44, 124, 48);
+  background-color:  rgb(50, 170, 56);
   color: white;
 }
 
 .additional-links {
   margin: 20px auto;
   text-align: center;
+}
+
+.additional-links a {
+  text-decoration: none;
+  color: rgb(20, 61, 245)
 }
 
 .edit-user-title {
@@ -404,10 +409,10 @@ table, th, td {
 }
 
 .delete-button {
-  font-size: 20px;
+  font-size: 12px;
   padding: 8px;
   border-radius: 5px;
-  background-color: rgb(220, 224, 220);
+  background-color: rgb(235, 152, 152);
   cursor: pointer;
   text-align: center;
   margin-left: 13px;
@@ -425,7 +430,7 @@ table, th, td {
 }
 
 .reset-button {
-  font-size: 20px;
+  font-size: 12px;
   padding: 8px;
   border-radius: 5px;
   background-color: rgb(220, 224, 220);
@@ -442,12 +447,22 @@ table, th, td {
   text-align: center;
 }
 
+#error_explanation {
+  width: 700px;
+  border-radius: 6px;
+  padding: 1px 2px 8px 12px;
+  margin: 30px auto;
+  background-color: #EAB6B6;
+  color: rgb(170, 12, 12)
+}
+
 .error-div {
   width: 700px;
   border-radius: 6px;
   padding: 1px 2px 8px 12px;
   margin: 30px auto;
   background-color: #EAB6B6;
+  color: rgb(170, 12, 12)
 }
 
 .error-header {
@@ -462,4 +477,14 @@ table, th, td {
 
 .error-list {
   margin-top: -14px;
+}
+
+.cancel-link-edit-user {
+  text-align: center;
+  padding-top: 12px;
+}
+
+.cancel-link-edit-user a {
+  text-decoration: none;
+  color: rgb(20, 61, 245)
 }
