@@ -12,8 +12,8 @@ const NavBar = props => {
             <div className='navbar-right'>
               <li><b>Welcome <i>{current_user.username}</i></b></li>
               <li><a href='/members/favorites'><b>Favorites</b></a></li>
-              <li><a href="/users/sign_out" rel="nofollow" data-method="delete"><b>SignOut</b></a></li>
               <li><a href='/users/edit'><b>EditUser</b></a></li>
+              <li><a href="/users/sign_out" rel="nofollow" data-method="delete"><b>SignOut</b></a></li>
             </div>
           </React.Fragment>
         }
