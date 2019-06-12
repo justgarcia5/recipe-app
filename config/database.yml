@@ -2,7 +2,7 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: sample_development
+  database: recipe-app
   username: postgres
   password:
   host: localhost
