@@ -2,6 +2,7 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.default_url_options = { :host => 'blooming-brushlands-16807.herokuapp.com/' }
 
+  ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     address: "smtp.sendgrid.net",
     port: "25",
@@ -40,7 +41,7 @@ Rails.application.configure do
   # Do not fallback to assets pipeline if a precompiled asset is missed.
   config.cache_classes = true
   config.serve_static_assets = true
-  config.assets.compile = true
+  config.assets.compile = false
   config.assets.digest = true
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
