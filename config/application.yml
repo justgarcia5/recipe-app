@@ -1,0 +1,17 @@
+development:
+ GMAIL_USERNAME: deviseresettesting@gmail.com
+ GMAIL_PASSWORD: Predators8
+ SENDGRID_USERNAME: app136469284@heroku.com
+ SENDGRID_PASSWORD: 9kxkeg4t2025
+
+test:
+ GMAIL_USERNAME: deviseresettesting@gmail.com
+ GMAIL_PASSWORD: Predators8
+ SENDGRID_USERNAME: app136469284@heroku.com
+ SENDGRID_PASSWORD: 9kxkeg4t2025
+
+production:
+ GMAIL_USERNAME: deviseresettesting@gmail.com
+ GMAIL_PASSWORD: Predators8
+ SENDGRID_USERNAME: app136469284@heroku.com
+ SENDGRID_PASSWORD: 9kxkeg4t2025
