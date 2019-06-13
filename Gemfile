@@ -6,6 +6,7 @@ ruby '2.5.3'
 gem 'webpacker'
 gem 'react-rails'
 gem 'devise'
+gem 'figaro'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

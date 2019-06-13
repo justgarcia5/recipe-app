@@ -14,10 +14,10 @@ Rails.application.configure do
   port: 25,
   authentication: "plain",
   enable_starttls_auto: true,
-  user_name: ENV['GMAIL_USERNAME'],
-  password: ENV['GMAIL_PASSWORD'],
-  domain: ENV['DOMAIN_NAME'],
-  openssl_verify_mode: 'none',
+  user_name: ENV["GMAIL_USERNAME"],
+  password: ENV["GMAIL_PASSWORD"],
+  domain: ENV["DOMAIN_NAME"],
+  openssl_verify_mode: "none",
  }
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that

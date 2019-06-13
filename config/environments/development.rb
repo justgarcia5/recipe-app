@@ -11,9 +11,9 @@ Rails.application.configure do
     port: 587,
     authentication: "plain",
     enable_starttls_auto: true,
-    user_name: ENV['GMAIL_USERNAME'],
-    password: ENV['GMAIL_PASSWORD'],
-    openssl_verify_mode: ‘none’
+    user_name: ENV["GMAIL_USERNAME"],
+    password: ENV["GMAIL_PASSWORD"],
+    openssl_verify_mode: "none"
   }
   config.action_mailer.perform_caching = false
 
