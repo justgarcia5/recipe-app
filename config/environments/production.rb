@@ -2,7 +2,6 @@ Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
   config.action_mailer.default_url_options = { :host => 'blooming-brushlands-16807.herokuapp.com/' }
 
-  ActionMailer::Base.delivery_method = :smtp
   ActionMailer::Base.smtp_settings = {
     address: "smtp.sendgrid.net",
     port: "25",
@@ -12,8 +11,6 @@ Rails.application.configure do
     authentication: "plain",
     enable_starttls_auto: true
   }
-
-
 
   # Code is not reloaded between requests.
   config.cache_classes = true
