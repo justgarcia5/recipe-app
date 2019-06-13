@@ -7,17 +7,17 @@ Rails.application.configure do
  # The :test delivery method accumulates sent emails in the
  # ActionMailer::Base.deliveries array.
  config.action_mailer.delivery_method = :test
- config.action_mailer.default_url_options = { :host => ‘localhost:3000’ }
- config.action_mailer.default_options = { from: “edit_to_reflect_your_gmail@gmail.com” }
+ config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+ config.action_mailer.default_options = { from: "edit_to_reflect_your_gmail@gmail.com" }
  config.action_mailer.smtp_settings = {
-  address: “smtp.gmail.com”,
+  address: "smtp.gmail.com",
   port: 25,
-  authentication: “plain”,
+  authentication: "plain",
   enable_starttls_auto: true,
-  user_name: ENV[‘GMAIL_USERNAME’],
-  password: ENV[‘GMAIL_PASSWORD’],
-  domain: ENV[‘DOMAIN_NAME’],
-  openssl_verify_mode: ‘none’,
+  user_name: ENV['GMAIL_USERNAME'],
+  password: ENV['GMAIL_PASSWORD'],
+  domain: ENV['DOMAIN_NAME'],
+  openssl_verify_mode: 'none',
  }
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
