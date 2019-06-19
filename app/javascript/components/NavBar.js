@@ -2,7 +2,6 @@ import React from 'react';
 
 const NavBar = props => {
   let { current_user } = props
-  console.log(props)
   return (
     <div className='NavBar'>
       <ul >
