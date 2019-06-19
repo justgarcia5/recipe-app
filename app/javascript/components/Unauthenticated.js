@@ -6,6 +6,8 @@ import {
 
 } from 'react-router-dom'
 
+require('dotenv').config()
+
 import RecipeDetail from '../pages/RecipeDetail';
 import Home from '../pages/Home'
 
