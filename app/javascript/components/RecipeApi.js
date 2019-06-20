@@ -2,8 +2,8 @@ import React from 'react'
 
 import RecipeLanding from './RecipesLanding'
 
-const APP_KEY = env.REACT_APP_RECIPE_APP_KEY
-const APP_ID = env.REACT_APP_RECIPE_APP_ID
+const APP_KEY = process.env.REACT_APP_RECIPE_APP_KEY
+const APP_ID = process.env.REACT_APP_RECIPE_APP_ID
 
 class RecipeApi extends React.Component {
   state = {

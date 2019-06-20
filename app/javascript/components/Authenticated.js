@@ -18,9 +18,6 @@ class Authenticated extends React.Component {
 
   render() {
     let { currentUser } = this.state
-    const APP_KEY = process.env.REACT_APP_RECIPE_APP_KEY
-    const APP_ID = process.env.REACT_APP_RECIPE_APP_ID
-    console.log(APP_ID)
     return (
       <div>
         <Router>
