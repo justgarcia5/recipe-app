@@ -25,6 +25,7 @@ const RecipesLanding = props => {
         response={props.response}
         data={props.data}
         popular={props.popular}
+        {...props}
       />
     </div>
   );

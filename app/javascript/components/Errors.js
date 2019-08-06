@@ -3,7 +3,6 @@ import React from 'react'
 class Errors extends React.Component{
   render(){
     const { errors } = this.props
-    console.log(errors)
     return(
       <div>
         {errors &&

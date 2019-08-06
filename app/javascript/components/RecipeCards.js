@@ -3,6 +3,8 @@ import {
   Link
 } from 'react-router-dom'
 
+import Checkbox from './Checkbox'
+
 const RecipeCards = props => {
   return (
     <div className='search-result-container'>
@@ -25,10 +27,14 @@ const RecipeCards = props => {
                   }
                 </ul>
               </Link>
+              <Checkbox
+                {...props}
+              />
             </div>
           )
         })
       }
+
       {!props.response &&
         props.popular.map((recipe, index) => {
           return (
@@ -48,6 +54,9 @@ const RecipeCards = props => {
                   }
                 </ul>
               </Link>
+              <Checkbox
+                {...props}
+              />
             </div>
           )
         })
