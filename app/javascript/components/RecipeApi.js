@@ -12,7 +12,7 @@ class RecipeApi extends React.Component {
     responseOk: false,
     search: '',
     errors: null,
-    favorites: false
+    checked: false
   }
 
   componentDidMount = () => {
@@ -34,7 +34,8 @@ class RecipeApi extends React.Component {
     }).then(response => response.json())
       .then(data => this.setState({ data: data, responseOk: true, search: '' }))
       .catch(errors => {
-        this.setState({responseOk: false, errors: {"System Error": ["Unknown problem has occurred"]}})      })
+        this.setState({ responseOk: false, errors: errors })
+      })
   }
 
   inputHandler = (e) => {
@@ -44,7 +45,6 @@ class RecipeApi extends React.Component {
 
   render() {
     let { errors } = this.props
-    console.log(APP_KEY)
 
     return (
       <div className='recipe-input'>
@@ -64,6 +64,7 @@ class RecipeApi extends React.Component {
           response={this.state.responseOk}
           popular={this.state.popular}
           errors={errors}
+          {...this.props}
         />
         <div className='bottom-link'>
         </div>

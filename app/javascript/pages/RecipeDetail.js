@@ -1,6 +1,7 @@
 import React from 'react';
 import DailyNutrients from '../components/DailyNutrients';
 import TotalNutrients from '../components/TotalNutrients';
+import Checkbox from '../components/Checkbox'
 
 const APP_KEY = 'b553d12844b50e38e7f0426de87800e2'
 const APP_ID = '61f1760b'
@@ -20,7 +21,7 @@ class RecipeDetail extends React.Component {
         this.setState({ recipes: filteredRecipes })
       })
       .catch(errors => {
-        this.setState({responseOk: false, errors: {"System Error": ["Unknown problem has occurred"]}})
+        this.setState({responseOk: false })
       })
   }
 
@@ -40,6 +41,10 @@ class RecipeDetail extends React.Component {
                     <p><b>Total Calories:</b> {Math.floor(recipe.calories)}</p>
                     {/* <p>Total weight {Math.floor(recipe.totalWeight)} g</p>
                     <p>Total time {recipe.totalTime}</p> */}
+                    <Checkbox
+                      {...this.props}
+                      params={this.props.match.params}
+                    /> Add Favorite
                   </div>
                   <div className='recipe-ingredients-list'>
                     <h2>Ingredients</h2>
