@@ -3,8 +3,6 @@ import {
   Link
 } from 'react-router-dom'
 
-import Checkbox from './Checkbox'
-
 const RecipeCards = props => {
   return (
     <div className='search-result-container'>
@@ -27,9 +25,6 @@ const RecipeCards = props => {
                   }
                 </ul>
               </Link>
-              <Checkbox
-                {...props}
-              />
             </div>
           )
         })
@@ -54,9 +49,6 @@ const RecipeCards = props => {
                   }
                 </ul>
               </Link>
-              <Checkbox
-                {...props}
-              />
             </div>
           )
         })

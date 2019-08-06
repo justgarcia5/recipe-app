@@ -42,8 +42,7 @@ class RecipeDetail extends React.Component {
                     {/* <p>Total weight {Math.floor(recipe.totalWeight)} g</p>
                     <p>Total time {recipe.totalTime}</p> */}
                     <Checkbox
-                      {...this.props}
-                      params={this.props.match.params}
+                      recipe={recipe}
                     /> Add Favorite
                   </div>
                   <div className='recipe-ingredients-list'>
