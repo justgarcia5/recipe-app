@@ -18,8 +18,8 @@ ActiveRecord::Schema.define(version: 2019_08_06_175944) do
   create_table "recipes", force: :cascade do |t|
     t.text "label", default: [], array: true
     t.string "source"
-    t.text "totalDaily", default: [], array: true
-    t.text "totalNutrients", default: [], array: true
+    t.text "totalDaily"
+    t.text "totalNutrients"
     t.integer "totalWeight"
     t.string "url"
     t.text "digest", default: [], array: true
