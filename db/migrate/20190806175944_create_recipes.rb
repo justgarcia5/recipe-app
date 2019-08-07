@@ -3,8 +3,8 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
     create_table :recipes do |t|
       t.text :label, array: true, default: []
       t.string :source
-      t.text :totalDaily, array: true, default: []
-      t.text :totalNutrients, array: true, default: []
+      t.text :totalDaily
+      t.text :totalNutrients
       t.integer :totalWeight
       t.string :url
       t.text :digest, array: true, default: []
