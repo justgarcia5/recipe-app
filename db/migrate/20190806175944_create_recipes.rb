@@ -1,7 +1,7 @@
 class CreateRecipes < ActiveRecord::Migration[5.2]
   def change
     create_table :recipes do |t|
-      t.text :label, array: true, default: []
+      t.text :label
       t.string :source
       t.text :totalDaily
       t.text :totalNutrients
@@ -13,7 +13,7 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.text :dietLabels, array: true, default: []
       t.text :healthLabels, array: true, default: []
       t.string :image
-      t.text :ingregients, array: true, default: []
+      t.text :ingredients, array: true, default: []
 
       t.timestamps
     end
