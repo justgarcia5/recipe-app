@@ -26,6 +26,7 @@ class RecipeDetail extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div className='recipe-detail'>
         {
@@ -43,6 +44,7 @@ class RecipeDetail extends React.Component {
                     <p>Total time {recipe.totalTime}</p> */}
                     <Checkbox
                       recipe={recipe}
+                      id={this.props.match.params.id}
                     /> Add Favorite
                   </div>
                   <div className='recipe-ingredients-list'>
