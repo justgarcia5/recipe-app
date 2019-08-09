@@ -20,7 +20,7 @@ class Unauthenticated extends React.Component {
             <Switch>
               <Route path='/' exact component={Home} />
               <Route path='/recipe-detail/:index/:label' exact component={RecipeDetail} />} />
-            <Route render={() => <p className='not-found'>Page not found!</p>} />
+              <Route render={() => <p className='not-found'>Page not found!</p>} />
             </Switch>
           </div>
         </Router>

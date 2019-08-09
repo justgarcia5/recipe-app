@@ -3,6 +3,7 @@ import React from 'react'
 class Checkbox extends React.Component {
   state = {
     checked: false,
+    recipes: [],
     recipe:
       {
         calories: this.props.recipe.calories,
@@ -18,8 +19,16 @@ class Checkbox extends React.Component {
         totalWeight: this.props.recipe.totalWeight,
         url: this.props.recipe.url,
         digest: this.props.recipe.digest
-      }
+      },
 
+  }
+
+  componentDidMount = () => {
+    fetch(`/recipes.json`)
+      .then((response) => response.json())
+      .then((recipes) => {
+        this.setState({ recipes: recipes })
+    })
   }
 
   checkBoxHandler = (e) => {
@@ -45,12 +54,24 @@ class Checkbox extends React.Component {
       }).catch((errors) => {
         this.setState({responseOk: false, errors: {"System Error": ["Unknown problem has occurred"]}})
       })
+    } else {
+      fetch(`/recipes/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+      }).then((response) => {
+          this.deleteRecipe(id)
+      })
     }
   }
 
-  render () {
-    console.log(this.state.recipe)
+  deleteRecipe = (id) => {
+    let filteredRecipes = this.state.recipes.filter((recipe) => recipe.id !== id)
+    this.setState({ recipes: filteredRecipes })
+  }
 
+  render () {
     return (
       <div>
         <input

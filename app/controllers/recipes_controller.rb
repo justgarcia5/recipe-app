@@ -6,6 +6,9 @@ class RecipesController < ApplicationController
     @recipes = current_user.recipes.all
   end
 
+  def show
+  end
+
   def new
     @recipe = Recipe.new
   end
@@ -16,11 +19,20 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to @recipe }
-        format.json { render :show, status: :created, location: @recipe }
+        format.json { render :index, status: :created, location: @recipe }
       else
         format.html { render :new }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @recipe.destroy
+
+    respond_to do |format|
+      format.html { redirect_to recipess_url, notice: 'Tool was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 
