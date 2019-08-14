@@ -27,6 +27,8 @@ class Checkbox extends React.Component {
     fetch(`/recipes.json`)
       .then((response) => response.json())
       .then((recipes) => {
+        // let recipeID = recipes.map((recipe) => recipe.id)
+        // let lastRecipe = recipeID[recipeID.length - 1]
         this.setState({ recipes: recipes })
     })
   }
@@ -45,33 +47,36 @@ class Checkbox extends React.Component {
       }).then((response) => {
         return response.json().then((json) => {
           if(response.status === 201) {
-            this.setState({responseOk: true})
+            this.setState({ responseOk: true })
           } else {
-            this.setState({responseOk: false, errors: json})
+            this.setState({ responseOk: false, errors: json })
           }
           return json
         })
       }).catch((errors) => {
-        this.setState({responseOk: false, errors: {"System Error": ["Unknown problem has occurred"]}})
+        this.setState({ errors: {"System Error": ["Unknown problem has occurred"]} })
       })
-    } else {
-      fetch(`/recipes/${id}`, {
+    } else if(checked === false) {
+      fetch(`/recipes/${this.state.recipes}`, {
         method: 'DELETE',
         headers: {
-          'Content-Type': 'application/json'
-        },
-      }).then((response) => {
-          this.deleteRecipe(id)
-      })
+          'Content-type': 'application/json'
+         },
+      }).then(() => {
+        // this.deleteRecipe(id)
+        console.log('removed');
+      }).catch(err => {
+        console.error(err)
+      });
     }
   }
 
-  deleteRecipe = (id) => {
-    let filteredRecipes = this.state.recipes.filter((recipe) => recipe.id !== id)
-    this.setState({ recipes: filteredRecipes })
-  }
-
+  // deleteRecipe = (id) => {
+  //   let filteredRecipes = this.state.recipes.filter((recipe) => recipe.id !== id)
+  //   this.setState({ recipes: filteredRecipes })
+  // }
   render () {
+    console.log(this.state.recipes)
     return (
       <div>
         <input

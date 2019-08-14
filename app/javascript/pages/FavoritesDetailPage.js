@@ -27,7 +27,7 @@ class FavoritesDetailPage extends React.Component {
         <Checkbox
           recipe={recipe}
           id={this.props.match.params.id}
-        /> Add Favorite
+        /> Favorite
       </div>
     )
   }
