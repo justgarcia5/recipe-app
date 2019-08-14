@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 2019_08_08_013501) do
     t.text "healthLabels", default: [], array: true
     t.string "image"
     t.text "ingredients", default: [], array: true
+    t.boolean "favorites"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"

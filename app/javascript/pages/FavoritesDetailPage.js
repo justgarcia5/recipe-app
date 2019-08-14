@@ -1,4 +1,8 @@
 import React from 'react'
+import {
+  Redirect
+
+} from 'react-router-dom'
 
 import Checkbox from '../components/Checkbox'
 import DailyNutrients from '../components/DailyNutrients'
@@ -7,27 +11,39 @@ import TotalNutrients from '../components/TotalNutrients'
 
 class FavoritesDetailPage extends React.Component {
   state = {
-    recipe: []
+    recipes: [],
+    responseOk: false
   }
 
   componentDidMount = () => {
     fetch(`/recipes/${this.props.match.params.id}.json`)
       .then((response) => response.json())
-      .then((recipe) => {
-        this.setState({ recipe: recipe })
+      .then((recipes) => {
+        this.setState({ recipes: recipes })
+    })
+  }
+
+  removeFavorites = (id) => {
+    fetch(`/recipes/${this.props.match.params.id}.json`, {
+      method: 'DELETE'
+    }).then(response => response.json()
+    ).catch((errors) => {
+      this.setState({ errors: {"System Error": ["Unknown problem has occurred"]}, responseOk: true })
     })
   }
 
   render () {
-    // console.log(this.state.recipe)
-    let { recipe } = this.state
+    let { recipes, responseOk } = this.state
     return (
-      <div className='recipe-detail'>
-        {recipe.label}
-        <Checkbox
-          recipe={recipe}
-          id={this.props.match.params.id}
-        /> Favorite
+      <div>
+        {
+          responseOk &&
+          <Redirect to='/members/favorites' />
+        }
+        <div className='recipe-detail'>
+          {recipes.label}
+          <p onClick={this.removeFavorites.bind(this)}>- Remove</p>
+        </div>
       </div>
     )
   }

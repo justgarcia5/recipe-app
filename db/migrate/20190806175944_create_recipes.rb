@@ -14,6 +14,7 @@ class CreateRecipes < ActiveRecord::Migration[5.2]
       t.text :healthLabels, array: true, default: []
       t.string :image
       t.text :ingredients, array: true, default: []
+      t.boolean :favorites
 
       t.timestamps
     end
