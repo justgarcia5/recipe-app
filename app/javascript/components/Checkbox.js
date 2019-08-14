@@ -4,6 +4,9 @@ class Checkbox extends React.Component {
   state = {
     checked: false,
     recipes: [],
+    responseOk: false,
+    favorites: false,
+    errors: null,
     recipe:
       {
         calories: this.props.recipe.calories,
@@ -18,7 +21,8 @@ class Checkbox extends React.Component {
         totalNutrients: this.props.recipe.totalNutrients,
         totalWeight: this.props.recipe.totalWeight,
         url: this.props.recipe.url,
-        digest: this.props.recipe.digest
+        digest: this.props.recipe.digest,
+        favorites: true,
       },
 
   }
@@ -27,16 +31,16 @@ class Checkbox extends React.Component {
     fetch(`/recipes.json`)
       .then((response) => response.json())
       .then((recipes) => {
-        // let recipeID = recipes.map((recipe) => recipe.id)
-        // let lastRecipe = recipeID[recipeID.length - 1]
         this.setState({ recipes: recipes })
     })
   }
 
   checkBoxHandler = (e) => {
-    let { recipe } = this.state
-    let checked = e.target.checked
-    if(checked === true) {
+    let { recipe, checked } = this.state
+    // let checked = e.target.checked
+    let check = checked === false ? true : false
+    console.log(check)
+    if(check === true) {
       console.log("Favorite successfully submitted");
       fetch('/recipes.json', {
         method: 'POST',
@@ -47,42 +51,39 @@ class Checkbox extends React.Component {
       }).then((response) => {
         return response.json().then((json) => {
           if(response.status === 201) {
-            this.setState({ responseOk: true })
-          } else {
-            this.setState({ responseOk: false, errors: json })
+            this.setState({ favorites: true, checked: check, responseOk: true })
           }
           return json
         })
       }).catch((errors) => {
         this.setState({ errors: {"System Error": ["Unknown problem has occurred"]} })
       })
-    } else if(checked === false) {
-      fetch(`/recipes/${this.state.recipes}`, {
-        method: 'DELETE',
-        headers: {
-          'Content-type': 'application/json'
-         },
-      }).then(() => {
-        // this.deleteRecipe(id)
-        console.log('removed');
-      }).catch(err => {
-        console.error(err)
-      });
+    } else {
+      this.setState({ checked: check})
     }
   }
 
-  // deleteRecipe = (id) => {
-  //   let filteredRecipes = this.state.recipes.filter((recipe) => recipe.id !== id)
-  //   this.setState({ recipes: filteredRecipes })
-  // }
+
   render () {
-    console.log(this.state.recipes)
+    // console.log(this.state.checked)
+    let { responseOk } = this.state
+    let favPointStyle = {
+      cursor: 'pointer'
+    }
     return (
-      <div>
-        <input
+      <div style={favPointStyle}>
+        {/* <input
           type="checkbox"
           onChange={this.checkBoxHandler}
-        />
+        /> */}
+        {
+          responseOk &&
+          <p>Added to Favorites</p>
+        }
+        {
+          !responseOk &&
+          <p onClick={this.checkBoxHandler.bind(this)}>+ Favorites</p>
+        }
       </div>
     )
   }

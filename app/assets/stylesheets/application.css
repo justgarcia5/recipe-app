@@ -488,3 +488,10 @@ table, th, td {
   text-decoration: none;
   color: rgb(20, 61, 245)
 }
+
+.favorites-title {
+  font-size: 50px;
+  text-align: center;
+  padding-top: 36px;
+  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+}
