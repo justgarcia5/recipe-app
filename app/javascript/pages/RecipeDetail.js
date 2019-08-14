@@ -20,13 +20,9 @@ class RecipeDetail extends React.Component {
         let filteredRecipes = filteredRecipeNames.filter((recipe, index) => index === 0)
         this.setState({ recipes: filteredRecipes })
       })
-      .catch(errors => {
-        this.setState({responseOk: false })
-      })
   }
 
   render() {
-    console.log(this.props)
     return (
       <div className='recipe-detail'>
         {
