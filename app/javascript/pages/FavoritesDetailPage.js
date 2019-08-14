@@ -12,14 +12,19 @@ import TotalNutrients from '../components/TotalNutrients'
 class FavoritesDetailPage extends React.Component {
   state = {
     recipes: [],
-    responseOk: false
+    responseOk: false,
+    ingredients: []
   }
 
   componentDidMount = () => {
     fetch(`/recipes/${this.props.match.params.id}.json`)
       .then((response) => response.json())
       .then((recipes) => {
-        this.setState({ recipes: recipes })
+        let length = recipes.ingredients.length
+        let ingredients = recipes.ingredients.map((ingredient) => ingredient)
+        // let filteredIngredients = ingredients.map((ingredient) => ingredient.text)
+        // console.log(filteredIngredients)
+        this.setState({ recipes: recipes, ingredients: ingredients })
     })
   }
 
@@ -33,8 +38,8 @@ class FavoritesDetailPage extends React.Component {
   }
 
   render () {
-    let { recipes, responseOk } = this.state
-    console.log(recipes.ingredients)
+    let { recipes, responseOk, ingredients } = this.state
+    console.log(ingredients)
 
     let favPointStyle = {
       cursor: 'pointer',
@@ -62,9 +67,9 @@ class FavoritesDetailPage extends React.Component {
               </div>
               <div className='recipe-ingredients-list'>
                 <h2>Ingredients</h2>
-                {recipes.ingredients}
-                {/* {
-                  recipes.ingredients.map((ingredient, index) => {
+                {ingredients}
+                {
+                  ingredients.map((ingredient, index) => {
                     return (
                       <div key={index}>
                         <ul>
@@ -74,7 +79,7 @@ class FavoritesDetailPage extends React.Component {
                       </div>
                     )
                   })
-                } */}
+                }
               </div>
             </div>
             <div className='recipe-detail-url'>

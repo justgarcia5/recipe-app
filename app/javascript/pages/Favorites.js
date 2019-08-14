@@ -18,7 +18,7 @@ class Favorites extends React.Component {
 
   render () {
     let { recipes } = this.state
-    console.log(recipes, this.props)
+    // console.log(recipes, this.props)
     return (
       <div>
         <h1 className='favorites-title'>Favorites</h1>
@@ -31,7 +31,6 @@ class Favorites extends React.Component {
                       <li><img src={recipe.image} alt='recipe-pic' className='recipe-image' /></li>
                       <hr/>
                       <li className='recipe-label'>{recipe.label}</li>
-                      {/* <li>{recipe.source}</li> */}
                       {
                         recipe.dietLabels.map((dietLabel, index ) => {
                           return (

@@ -37,9 +37,7 @@ class Checkbox extends React.Component {
 
   checkBoxHandler = (e) => {
     let { recipe, checked } = this.state
-    // let checked = e.target.checked
     let check = checked === false ? true : false
-    console.log(check)
     if(check === true) {
       console.log("Favorite successfully submitted");
       fetch('/recipes.json', {
