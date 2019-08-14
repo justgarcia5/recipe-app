@@ -34,6 +34,13 @@ class FavoritesDetailPage extends React.Component {
 
   render () {
     let { recipes, responseOk } = this.state
+    console.log(recipes.ingredients)
+
+    let favPointStyle = {
+      cursor: 'pointer',
+
+    }
+
     return (
       <div>
         {
@@ -41,8 +48,60 @@ class FavoritesDetailPage extends React.Component {
           <Redirect to='/members/favorites' />
         }
         <div className='recipe-detail'>
-          {recipes.label}
-          <p onClick={this.removeFavorites.bind(this)}>- Remove</p>
+          <div>
+            <p className='recipe-detail-title' id='title'>{recipes.label}</p>
+            <hr/>
+            <div className='detail-page-row-1'>
+              <div>
+                <img src={recipes.image} alt='recipe' className='recipe-detail-image' />
+                <p><b>Source:</b> {recipes.source}</p>
+                <p><b>Total Calories:</b> {Math.floor(recipes.calories)}</p>
+                {/* <p>Total weight {Math.floor(recipe.totalWeight)} g</p>
+                <p>Total time {recipe.totalTime}</p> */}
+                <a onClick={this.removeFavorites.bind(this)} style={favPointStyle}>- Remove</a>
+              </div>
+              <div className='recipe-ingredients-list'>
+                <h2>Ingredients</h2>
+                {recipes.ingredients}
+                {/* {
+                  recipes.ingredients.map((ingredient, index) => {
+                    return (
+                      <div key={index}>
+                        <ul>
+                          <li>{ingredient.text}</li>
+                          <li className='recipe-ingredients-weight'>Weight: {Math.floor(ingredient.weight)} grams</li>
+                        </ul>
+                      </div>
+                    )
+                  })
+                } */}
+              </div>
+            </div>
+            <div className='recipe-detail-url'>
+              <p><b>Cooking Instructions:</b></p>
+              <i>
+                <a href={recipes.url} rel="noopener noreferrer" target="_blank">{recipes.url}</a>
+              </i>
+            </div>
+            {/* <div className='recipe-health-labels-div'>
+              <h2>Health Labels</h2>
+              {
+                recipe.healthLabels.map((label, index) => {
+                  return (
+                    <div key={index}>
+                      <ul>
+                        <li className='recipe-health-labels'>{label}</li>
+                      </ul>
+                    </div>
+                  )
+                })
+              }
+            </div> */}
+            {/* <div className='recipe-detail-nutrients'>
+              <DailyNutrients recipe={recipe} />
+              <TotalNutrients recipe={recipe} />
+            </div> */}
+          </div>
         </div>
       </div>
     )

@@ -4,6 +4,7 @@ class Checkbox extends React.Component {
   state = {
     checked: false,
     recipes: [],
+    responseOk: false,
     favorites: false,
     errors: null,
     recipe:
@@ -50,7 +51,7 @@ class Checkbox extends React.Component {
       }).then((response) => {
         return response.json().then((json) => {
           if(response.status === 201) {
-            this.setState({ favorites: true, checked: check })
+            this.setState({ favorites: true, checked: check, responseOk: true })
           }
           return json
         })
@@ -65,13 +66,24 @@ class Checkbox extends React.Component {
 
   render () {
     // console.log(this.state.checked)
+    let { responseOk } = this.state
+    let favPointStyle = {
+      cursor: 'pointer'
+    }
     return (
-      <div>
+      <div style={favPointStyle}>
         {/* <input
           type="checkbox"
           onChange={this.checkBoxHandler}
         /> */}
-        <p onClick={this.checkBoxHandler.bind(this)}>+ Favorites</p>
+        {
+          responseOk &&
+          <p>Added to Favorites</p>
+        }
+        {
+          !responseOk &&
+          <p onClick={this.checkBoxHandler.bind(this)}>+ Favorites</p>
+        }
       </div>
     )
   }
