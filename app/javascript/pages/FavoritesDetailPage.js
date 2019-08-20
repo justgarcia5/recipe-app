@@ -4,10 +4,6 @@ import {
 
 } from 'react-router-dom'
 
-import Checkbox from '../components/Checkbox'
-import DailyNutrients from '../components/DailyNutrients'
-import TotalNutrients from '../components/TotalNutrients'
-
 
 class FavoritesDetailPage extends React.Component {
   state = {
@@ -22,8 +18,6 @@ class FavoritesDetailPage extends React.Component {
       .then((recipes) => {
         let length = recipes.ingredients.length
         let ingredients = recipes.ingredients.map((ingredient) => ingredient)
-        // let filteredIngredients = ingredients.map((ingredient) => ingredient.text)
-        // console.log(filteredIngredients)
         this.setState({ recipes: recipes, ingredients: ingredients })
     })
   }
@@ -39,7 +33,7 @@ class FavoritesDetailPage extends React.Component {
 
   render () {
     let { recipes, responseOk, ingredients } = this.state
-    console.log(ingredients)
+    console.log(this.props)
 
     let favPointStyle = {
       cursor: 'pointer',
