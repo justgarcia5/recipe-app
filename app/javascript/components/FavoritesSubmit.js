@@ -1,12 +1,12 @@
 import React from 'react'
 
-class Checkbox extends React.Component {
+class FavoritesSubmit extends React.Component {
   state = {
     checked: false,
-    recipes: [],
     responseOk: false,
     favorites: false,
     errors: null,
+    filteredLabels: false,
     recipe:
       {
         calories: this.props.recipe.calories,
@@ -27,15 +27,7 @@ class Checkbox extends React.Component {
 
   }
 
-  componentDidMount = () => {
-    fetch(`/recipes.json`)
-      .then((response) => response.json())
-      .then((recipes) => {
-        this.setState({ recipes: recipes })
-    })
-  }
-
-  checkBoxHandler = (e) => {
+  favoritesSubmitHandler = (e) => {
     let { recipe, checked } = this.state
     let check = checked === false ? true : false
     if(check === true) {
@@ -61,30 +53,45 @@ class Checkbox extends React.Component {
     }
   }
 
+  FavIconPrevent = () => {
+    let dbRecipeLabels = this.props.recipes.map((recipe) => recipe.label)
+    let duplicateLabel = dbRecipeLabels.filter((label) => label === this.props.recipe.label)
+    let removeArr = duplicateLabel.pop()
+    console.log(this.props.recipe.label)
+    console.log(removeArr)
+    if(removeArr == this.props.recipe.label) {
+      let filteredLabels = true
+      this.setState({ filteredLabels: filteredLabels })
+      console.log(this.state.filteredLabels)
+    }
+  }
+
+  componentDidMount = () => {
+    this.FavIconPrevent()
+    // console.log(this.state.filteredLabels)
+
+  }
+
 
   render () {
-    // console.log(this.state.checked)
-    let { responseOk } = this.state
+    let { filteredLabels, responseOk } = this.state
     let favPointStyle = {
       cursor: 'pointer'
     }
+
     return (
       <div style={favPointStyle}>
-        {/* <input
-          type="checkbox"
-          onChange={this.checkBoxHandler}
-        /> */}
         {
-          responseOk &&
+          filteredLabels &&
           <p>Added to Favorites</p>
         }
         {
           !responseOk &&
-          <p onClick={this.checkBoxHandler.bind(this)}>+ Favorites</p>
+          <p onClick={this.favoritesSubmitHandler.bind(this)}>+ Favorites</p>
         }
       </div>
     )
   }
 }
 
-export default Checkbox
+export default FavoritesSubmit

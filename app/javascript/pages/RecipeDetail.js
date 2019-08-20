@@ -1,7 +1,7 @@
 import React from 'react';
 import DailyNutrients from '../components/DailyNutrients';
 import TotalNutrients from '../components/TotalNutrients';
-import Checkbox from '../components/Checkbox'
+import FavoritesSubmit from '../components/FavoritesSubmit'
 
 const APP_KEY = 'b553d12844b50e38e7f0426de87800e2'
 const APP_ID = '61f1760b'
@@ -23,7 +23,7 @@ class RecipeDetail extends React.Component {
   }
 
   render() {
-    console.log(this.props)
+    // console.log(this.props)
     return (
       <div className='recipe-detail'>
         {
@@ -37,10 +37,9 @@ class RecipeDetail extends React.Component {
                     <img src={recipe.image} alt='recipe' className='recipe-detail-image' />
                     <p><b>Source:</b> {recipe.source}</p>
                     <p><b>Total Calories:</b> {Math.floor(recipe.calories)}</p>
-                    {/* <p>Total weight {Math.floor(recipe.totalWeight)} g</p>
-                    <p>Total time {recipe.totalTime}</p> */}
-                    <Checkbox
+                    <FavoritesSubmit
                       recipe={recipe}
+                      recipes={this.props.recipes}
                     />
                   </div>
                   <div className='recipe-ingredients-list'>
