@@ -32,7 +32,8 @@ class FavoritesDetailPage extends React.Component {
 
     let favPointStyle = {
       cursor: 'pointer',
-
+      color: 'red',
+      fontSize: '26px'
     }
 
     console.log(recipes)
