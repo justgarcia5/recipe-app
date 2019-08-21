@@ -8,7 +8,7 @@ const APP_ID = '61f1760b'
 
 class RecipeDetail extends React.Component {
   state = {
-    recipes: []
+    recipes: [],
   }
 
   componentDidMount = () => {
@@ -23,7 +23,7 @@ class RecipeDetail extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
+    console.log(this.props.currentUser)
     return (
       <div className='recipe-detail'>
         {
@@ -37,10 +37,12 @@ class RecipeDetail extends React.Component {
                     <img src={recipe.image} alt='recipe' className='recipe-detail-image' />
                     <p><b>Source:</b> {recipe.source}</p>
                     <p><b>Total Calories:</b> {Math.floor(recipe.calories)}</p>
-                    <FavoritesSubmit
+                    {this.props.currentUser &&
+                      <FavoritesSubmit
                       recipe={recipe}
                       recipes={this.props.recipes}
                     />
+                    }
                   </div>
                   <div className='recipe-ingredients-list'>
                     <h2>Ingredients</h2>
