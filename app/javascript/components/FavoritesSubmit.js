@@ -27,6 +27,13 @@ class FavoritesSubmit extends React.Component {
 
   }
 
+  // componentDidMount = () => {
+  //   let ingText = this.props.recipe.ingredients.map((ingredient) => {
+  //     return ingredient.text
+  //   })
+  //   console.log(ingText)
+  // }
+
   favoritesSubmitHandler = (e) => {
     let { recipe, checked } = this.state
     let check = checked === false ? true : false
@@ -53,24 +60,24 @@ class FavoritesSubmit extends React.Component {
     }
   }
 
-  FavIconPrevent = () => {
-    let dbRecipeLabels = this.props.recipes.map((recipe) => recipe.label)
-    let duplicateLabel = dbRecipeLabels.filter((label) => label === this.props.recipe.label)
-    let removeArr = duplicateLabel.pop()
-    console.log(this.props.recipe.label)
-    console.log(removeArr)
-    if(removeArr == this.props.recipe.label) {
-      let filteredLabels = true
-      this.setState({ filteredLabels: filteredLabels })
-      console.log(this.state.filteredLabels)
-    }
-  }
+  // FavIconPrevent = () => {
+  //   let dbRecipeLabels = this.props.recipes.map((recipe) => recipe.label)
+  //   let duplicateLabel = dbRecipeLabels.filter((label) => label === this.props.recipe.label)
+  //   let removeArr = duplicateLabel.pop()
+  //   console.log(this.props.recipe.label)
+  //   console.log(removeArr)
+  //   if(removeArr == this.props.recipe.label) {
+  //     let filteredLabels = true
+  //     this.setState({ filteredLabels: filteredLabels })
+  //     console.log(this.state.filteredLabels)
+  //   }
+  // }
 
-  componentDidMount = () => {
-    this.FavIconPrevent()
-    // console.log(this.state.filteredLabels)
+  // componentDidMount = () => {
+  //   this.FavIconPrevent()
+  //   // console.log(this.state.filteredLabels)
 
-  }
+  // }
 
 
   render () {

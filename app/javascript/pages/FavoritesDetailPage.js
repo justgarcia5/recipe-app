@@ -4,21 +4,17 @@ import {
 
 } from 'react-router-dom'
 
-
 class FavoritesDetailPage extends React.Component {
   state = {
     recipes: [],
     responseOk: false,
-    ingredients: []
   }
 
   componentDidMount = () => {
     fetch(`/recipes/${this.props.match.params.id}.json`)
       .then((response) => response.json())
       .then((recipes) => {
-        let length = recipes.ingredients.length
-        let ingredients = recipes.ingredients.map((ingredient) => ingredient)
-        this.setState({ recipes: recipes, ingredients: ingredients })
+        this.setState({ recipes: recipes })
     })
   }
 
@@ -32,14 +28,14 @@ class FavoritesDetailPage extends React.Component {
   }
 
   render () {
-    let { recipes, responseOk, ingredients } = this.state
-    console.log(this.props)
+    let { recipes, responseOk} = this.state
 
     let favPointStyle = {
       cursor: 'pointer',
 
     }
 
+    console.log(recipes)
     return (
       <div>
         {
@@ -61,19 +57,20 @@ class FavoritesDetailPage extends React.Component {
               </div>
               <div className='recipe-ingredients-list'>
                 <h2>Ingredients</h2>
-                {ingredients}
-                {
+                {/* {ingredients} */}
+                {/* {
                   ingredients.map((ingredient, index) => {
                     return (
                       <div key={index}>
                         <ul>
                           <li>{ingredient.text}</li>
                           <li className='recipe-ingredients-weight'>Weight: {Math.floor(ingredient.weight)} grams</li>
+                          <li>hello</li>
                         </ul>
                       </div>
                     )
                   })
-                }
+                } */}
               </div>
             </div>
             <div className='recipe-detail-url'>
