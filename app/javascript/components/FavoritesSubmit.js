@@ -14,7 +14,6 @@ class FavoritesSubmit extends React.Component {
         dietLabels: this.props.recipe.dietLabels,
         healthLabels: this.props.recipe.healthLabels,
         image: this.props.recipe.image,
-        ingredients: this.props.recipe.ingredients,
         label: this.props.recipe.label,
         source: this.props.recipe.source,
         totalDaily: this.props.recipe.totalDaily,
@@ -24,6 +23,10 @@ class FavoritesSubmit extends React.Component {
         digest: this.props.recipe.digest,
         favorites: true,
       },
+    ingredients: {
+      text: this.props.ingredientText,
+      weight: this.props.ingredientWeight,
+    }
 
   }
 
@@ -37,7 +40,7 @@ class FavoritesSubmit extends React.Component {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({recipe: recipe})
+        body: JSON.stringify({ recipe: recipe })
       }).then((response) => {
         return response.json().then((json) => {
           if(response.status === 201) {
