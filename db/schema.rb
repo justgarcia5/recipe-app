@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2019_09_09_205047) do
   enable_extension "plpgsql"
 
   create_table "ingredients", force: :cascade do |t|
-    t.string "text"
-    t.integer "weight"
+    t.text "text", default: [], array: true
+    t.integer "weight", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "recipe_id"
@@ -27,18 +27,10 @@ ActiveRecord::Schema.define(version: 2019_09_09_205047) do
   create_table "recipes", force: :cascade do |t|
     t.text "label"
     t.string "source"
-    t.text "totalDaily"
-    t.text "totalNutrients"
     t.integer "totalWeight"
     t.string "url"
-    t.text "digest", default: [], array: true
     t.string "calories"
-    t.text "cautions", default: [], array: true
-    t.text "dietLabels", default: [], array: true
-    t.text "healthLabels", default: [], array: true
     t.string "image"
-    t.text "ingredients", default: [], array: true
-    t.boolean "favorites"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"

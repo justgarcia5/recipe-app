@@ -9,8 +9,7 @@ const APP_ID = '61f1760b'
 class RecipeDetail extends React.Component {
   state = {
     recipes: [],
-    ingredientText: [],
-    ingredientWeight: [],
+    ingredients: []
   }
 
   componentDidMount = () => {
@@ -20,24 +19,13 @@ class RecipeDetail extends React.Component {
         let recipes = data.hits.map((hit) => hit.recipe)
         let filteredRecipeNames = recipes.filter((recipe) => recipe.label === this.props.match.params.label)
         let filteredRecipes = filteredRecipeNames.filter((recipe, index) => index === 0)
-        let ingredientsText = filteredRecipes.map((recipe) => {
-          return recipe.ingredients.map((ingredient) => {
-            return ingredient.text
-          })
+        let ingredients = filteredRecipes.map((recipe) => {
+          return recipe.ingredients
         })
-        let ingredientsWeight = filteredRecipes.map((recipe) => {
-          return recipe.ingredients.map((ingredient) => {
-            return ingredient.weight
-          })
-        })
-        // console.log(ingredientsText, ingredientsWeight)
-
         this.setState({
           recipes: filteredRecipes,
-          ingredientText: ingredientsText,
-          ingredientWeight: ingredientsWeight
+          ingredients: ingredients
         })
-        console.log(this.state.ingredientText, this.state.ingredientWeight)
       })
   }
 
@@ -60,8 +48,7 @@ class RecipeDetail extends React.Component {
                       <FavoritesSubmit
                       recipe={recipe}
                       recipes={this.props.recipes}
-                      ingredientText={this.state.ingredientText}
-                      ingredientWeight={this.state.ingredientWeight}
+                      ingredients={this.state.ingredients}
                     />
                     }
                   </div>
