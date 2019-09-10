@@ -31,13 +31,6 @@ class Favorites extends React.Component {
                       <li><img src={recipe.image} alt='recipe-pic' className='recipe-image' /></li>
                       <hr/>
                       <li className='recipe-label'>{recipe.label}</li>
-                      {
-                        recipe.dietLabels.map((dietLabel, index ) => {
-                          return (
-                            <li key={index}>{dietLabel}</li>
-                          )
-                        })
-                      }
                     </ul>
                   </Link>
                 </div>

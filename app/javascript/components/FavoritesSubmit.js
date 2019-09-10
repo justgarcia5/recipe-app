@@ -1,33 +1,22 @@
 import React from 'react'
 
+import IngredientsSubmit from './IngredientsSubmit'
+
 class FavoritesSubmit extends React.Component {
   state = {
     checked: false,
     responseOk: false,
-    favorites: false,
     errors: null,
     filteredLabels: false,
     recipe:
       {
         calories: this.props.recipe.calories,
-        cautions: this.props.recipe.cautions,
-        dietLabels: this.props.recipe.dietLabels,
-        healthLabels: this.props.recipe.healthLabels,
+        totalWeight: this.props.recipe.totalWeight,
         image: this.props.recipe.image,
         label: this.props.recipe.label,
         source: this.props.recipe.source,
-        totalDaily: this.props.recipe.totalDaily,
-        totalNutrients: this.props.recipe.totalNutrients,
-        totalWeight: this.props.recipe.totalWeight,
         url: this.props.recipe.url,
-        digest: this.props.recipe.digest,
-        favorites: true,
       },
-    ingredients: {
-      text: this.props.ingredientText,
-      weight: this.props.ingredientWeight,
-    }
-
   }
 
   favoritesSubmitHandler = (e) => {
@@ -44,7 +33,7 @@ class FavoritesSubmit extends React.Component {
       }).then((response) => {
         return response.json().then((json) => {
           if(response.status === 201) {
-            this.setState({ favorites: true, checked: check, responseOk: true })
+            this.setState({ checked: check, responseOk: true })
           }
           return json
         })
@@ -70,10 +59,12 @@ class FavoritesSubmit extends React.Component {
           filteredLabels &&
           <p>Added to Favorites</p>
         }
-        {
-          !responseOk &&
-          <p onClick={this.favoritesSubmitHandler.bind(this)}>+ Favorites</p>
-        }
+
+        <IngredientsSubmit
+          favoritesSubmitHandler={this.favoritesSubmitHandler}
+          ingredients={this.props.ingredients}
+          responseOk={responseOk}
+        />
       </div>
     )
   }
