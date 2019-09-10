@@ -10,12 +10,15 @@ class IngredientsSubmit extends React.Component {
 
   componentDidMount = () => {
     let text = this.props.ingredients.map((ingredient, index) => {
-      return ingredient.map((ingredient) => ingredient.text)
+      return ingredient.map((ingredient, index) => {
+        return ingredient
+      })
     })
+
     let weight = this.props.ingredients.map((ingredient, index) => {
       return ingredient.map((ingredient) => ingredient.weight)
     })
-    console.log(text, weight)
+    console.log(text)
     this.setState({ ingredient: {
       text: text,
       weight: weight
@@ -42,7 +45,7 @@ class IngredientsSubmit extends React.Component {
   }
 
   render() {
-    // console.log(this.state.ingredients)
+    console.log(this.state.ingredient)
 
     return(
       <div>

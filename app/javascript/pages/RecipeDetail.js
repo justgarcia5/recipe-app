@@ -19,9 +19,7 @@ class RecipeDetail extends React.Component {
         let recipes = data.hits.map((hit) => hit.recipe)
         let filteredRecipeNames = recipes.filter((recipe) => recipe.label === this.props.match.params.label)
         let filteredRecipes = filteredRecipeNames.filter((recipe, index) => index === 0)
-        let ingredients = filteredRecipes.map((recipe) => {
-          return recipe.ingredients
-        })
+        let ingredients = filteredRecipes.map((recipe) => recipe.ingredients)
         this.setState({
           recipes: filteredRecipes,
           ingredients: ingredients
@@ -30,7 +28,6 @@ class RecipeDetail extends React.Component {
   }
 
   render() {
-
     return (
       <div className='recipe-detail'>
         {

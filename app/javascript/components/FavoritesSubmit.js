@@ -10,6 +10,19 @@ class FavoritesSubmit extends React.Component {
     filteredLabels: false,
     recipe:
       {
+        calories: '',
+        totalWeight: '',
+        image: '',
+        label: '',
+        source: '',
+        url: '',
+      },
+  }
+
+  componentDidMount = () => {
+    this.setState({
+      recipe:
+      {
         calories: this.props.recipe.calories,
         totalWeight: this.props.recipe.totalWeight,
         image: this.props.recipe.image,
@@ -17,6 +30,7 @@ class FavoritesSubmit extends React.Component {
         source: this.props.recipe.source,
         url: this.props.recipe.url,
       },
+    })
   }
 
   favoritesSubmitHandler = (e) => {
