@@ -20,23 +20,25 @@ class Favorites extends React.Component {
     let { recipes } = this.state
     // console.log(recipes, this.props)
     return (
-      <div>
-        <h1 className='favorites-title'>Favorites</h1>
-        <div className='search-result-container'>
-        { recipes.map((recipe, index) => {
-            return (
-                <div key={index} className='recipe-card'>
-                  <Link to={`/members/favorites/detail/${recipe.id}`} >
-                    <ul>
-                      <li><img src={recipe.image} alt='recipe-pic' className='recipe-image' /></li>
-                      <hr/>
-                      <li className='recipe-label'>{recipe.label}</li>
-                    </ul>
-                  </Link>
-                </div>
-            )
-          })
-        }
+      <div className='favorites-div'>
+        <div className='favorites-landing'>
+          <h1 className='favorites-title'>Favorites</h1>
+          <div className='search-result-container'>
+          { recipes.map((recipe, index) => {
+              return (
+                  <div key={index} className='recipe-card'>
+                    <Link to={`/members/favorites/detail/${recipe.id}`} >
+                      <ul>
+                        <li><img src={recipe.image} alt='recipe-pic' className='recipe-image' /></li>
+                        <hr/>
+                        <li className='recipe-label'>{recipe.label}</li>
+                      </ul>
+                    </Link>
+                  </div>
+              )
+            })
+          }
+          </div>
         </div>
       </div>
     )

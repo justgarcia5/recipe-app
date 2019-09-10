@@ -1,6 +1,7 @@
 import React from 'react'
 
 import RecipeLanding from './RecipesLanding'
+import SearchField from "react-search-field"
 
 const APP_KEY = 'b553d12844b50e38e7f0426de87800e2'
 const APP_ID = '61f1760b'
@@ -57,6 +58,13 @@ class RecipeApi extends React.Component {
             onChange={this.inputHandler}
             value={this.state.search}
           />
+          {/* <SearchField
+            placeholder="Search..."
+            onChange={this.inputHandler}
+            value={this.state.search}
+            searchText="This is initial search text"
+            classNames="test-class"
+          /> */}
           <button type='submit' className='input-form-button'>Search</button>
         </form>
         <RecipeLanding

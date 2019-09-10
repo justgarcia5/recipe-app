@@ -2,7 +2,7 @@
   font-size: 50px;
   text-align: center;
   padding-top: 36px;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-family: 'Manjari', sans-serif;
 }
 
 @media screen and (max-width: 500px) {
@@ -24,7 +24,7 @@
   margin: 12px auto;
   padding-right: 17px;
   font-size: 17px;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-family: 'Manjari', sans-serif;
 }
 
 .navbar-right a {
@@ -49,7 +49,7 @@
   color: rgb(12, 10, 10);
   text-decoration: none;
   font-size: 35px;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-family: 'Monoton', cursive!important;
   float: left;
 }
 
@@ -200,7 +200,7 @@
 .recipe-card ul {
   margin: 10px auto;
   padding: 0;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-family: 'Manjari', sans-serif;
   font-size: 20px;
 }
 
@@ -238,7 +238,7 @@
 .recipe-detail-title {
   font-size: 50px;
   text-align: center;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-family: 'Manjari', sans-serif!important;
 }
 
 @media screen and (max-width: 500px) {
@@ -254,6 +254,7 @@
   margin-left: 70px;
   width: 550px;
   margin-top: 30px;
+  font-family: 'Manjari', sans-serif;
 }
 
 @media screen and (max-width: 500px) {
@@ -278,6 +279,7 @@
 .recipe-source {
   margin-left: 280px;
   padding: 30px;
+  font-family: 'Manjari', sans-serif;
 }
 
 .bottom-link {
@@ -294,6 +296,7 @@
 
 .recipe-detail-url {
   text-align: center;
+  font-family: 'Manjari', sans-serif;
 }
 
 table, th, td {
@@ -308,8 +311,13 @@ table, th, td {
   flex-wrap: wrap;
 }
 
+.detail-page-row-1 {
+  font-family: 'Manjari', sans-serif;
+}
+
 .total-nutrients {
   margin: 100px;
+  font-family: 'Manjari', sans-serif;
 }
 @media screen and (max-width: 500px) {
   .total-nutrients {
@@ -320,6 +328,7 @@ table, th, td {
 
 .daily-nutrients {
   margin: 100px;
+  font-family: 'Manjari', sans-serif;
 }
 
 @media screen and (max-width: 500px) {
@@ -328,17 +337,23 @@ table, th, td {
   }
 }
 
+.form-container {
+  font-family: 'Manjari', sans-serif;
+}
+
 .login-container {
   padding-top: 20px;
   margin: 60px auto;
   width: 500px;
   height: 600px;
   background-color: rgb(216, 216, 216);
+  font-family: 'Manjari', sans-serif;
+
 }
 
 .login-title {
   font-size: 35px;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-family: 'Manjari', sans-serif;
   margin-top: 30px;
   text-align: center;
 }
@@ -353,7 +368,7 @@ table, th, td {
   font-size: 18px;
   text-align: left;
   padding-left: 100px;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-family: 'Manjari', sans-serif;
 }
 
 .input-small {
@@ -404,7 +419,7 @@ table, th, td {
 
 .edit-user-title {
   text-align: center;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-family: 'Manjari', sans-serif;
   font-size: 35px;
 }
 
@@ -425,7 +440,7 @@ table, th, td {
 
 .forgot-password-title {
   text-align: center;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-family: 'Manjari', sans-serif;
   font-size: 35px;
 }
 
@@ -493,5 +508,20 @@ table, th, td {
   font-size: 50px;
   text-align: center;
   padding-top: 36px;
-  font-family: Copperplate, "Copperplate Gothic Light", fantasy;
+  font-family: 'Manjari', sans-serif;
 }
+
+.favorites-landing {
+  background-color: rgb(216, 216, 216);
+  max-width: 88%;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.favorites-div {
+  padding-top: 100px;
+}
+/*
+* {
+   font-family: 'Manjari', sans-serif;
+} */
