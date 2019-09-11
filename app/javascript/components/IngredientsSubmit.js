@@ -18,7 +18,7 @@ class IngredientsSubmit extends React.Component {
     let weight = this.props.ingredients.map((ingredient, index) => {
       return ingredient.map((ingredient) => ingredient.weight)
     })
-    console.log(text)
+    console.log(Array.text, weight)
     this.setState({ ingredient: {
       text: text,
       weight: weight

@@ -1,7 +1,6 @@
 import React from 'react'
 
 import RecipeLanding from './RecipesLanding'
-import SearchField from "react-search-field"
 
 const APP_KEY = 'b553d12844b50e38e7f0426de87800e2'
 const APP_ID = '61f1760b'
@@ -44,7 +43,6 @@ class RecipeApi extends React.Component {
     this.setState({ search: search })
   }
 
-
   render() {
     let { errors } = this.props
 
@@ -68,8 +66,6 @@ class RecipeApi extends React.Component {
           errors={errors}
           {...this.props}
         />
-        <div className='bottom-link'>
-        </div>
       </div>
     )
   }
