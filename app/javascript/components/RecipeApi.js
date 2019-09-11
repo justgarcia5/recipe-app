@@ -44,6 +44,7 @@ class RecipeApi extends React.Component {
     this.setState({ search: search })
   }
 
+
   render() {
     let { errors } = this.props
 
@@ -58,13 +59,6 @@ class RecipeApi extends React.Component {
             onChange={this.inputHandler}
             value={this.state.search}
           />
-          {/* <SearchField
-            placeholder="Search..."
-            onChange={this.inputHandler}
-            value={this.state.search}
-            searchText="This is initial search text"
-            classNames="test-class"
-          /> */}
           <button type='submit' className='input-form-button'>Search</button>
         </form>
         <RecipeLanding

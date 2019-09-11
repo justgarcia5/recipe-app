@@ -1,12 +1,15 @@
 import React from 'react';
 
+import Knife from '../../assets/images/knife2.png'
+
 const NavBar = props => {
   let { current_user } = props
   return (
     <div className='NavBar'>
-      <ul >
+      <ul className='nav-ul'>
         {current_user &&
           <React.Fragment>
+            <img src={Knife} className='chef-logo' />
             <a href='/' className='NavBar-home'> <li><b>RecipeApp</b></li></a>
             <div className='navbar-right'>
               <li><b>Welcome <i>{current_user.username}</i></b></li>
@@ -18,6 +21,7 @@ const NavBar = props => {
         }
         {!current_user &&
           <React.Fragment>
+            <img src={Knife} className='chef-logo' />
             <a href='/' className='NavBar-home'> <li><b>RecipeApp</b></li></a>
             <div className='navbar-right'>
               <a href="/users/sign_in"><li><b>Login</b></li></a>
