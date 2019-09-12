@@ -3,8 +3,8 @@ import React from 'react'
 class IngredientsSubmit extends React.Component {
   state = {
     ingredient: {
-        text: [],
-        weight: []
+        text: '',
+        weight: ''
     }
   }
 
@@ -27,15 +27,13 @@ class IngredientsSubmit extends React.Component {
 
   ingredientsSubmit = () => {
     let { ingredient } = this.state
-    this.props.favoritesSubmitHandler()
+    this.props.favoritesSubmit()
     fetch('/ingredients.json', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({
-        ingredient: ingredient
-      })
+      body: JSON.stringify({ ingredient: ingredient })
     }).then((response) => response.json())
     .then((ingredients) => ingredients)
     .catch((errors) => {
