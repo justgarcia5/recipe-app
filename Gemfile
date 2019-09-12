@@ -5,7 +5,7 @@ ruby '2.5.3'
 
 gem 'webpacker'
 gem 'react-rails'
-gem 'devise'
+gem "devise", ">= 4.7.1"
 gem 'figaro'
 
 

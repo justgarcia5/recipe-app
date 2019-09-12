@@ -33,7 +33,7 @@ class FavoritesSubmit extends React.Component {
     })
   }
 
-  favoritesSubmitHandler = (e) => {
+  favoritesSubmit = (e) => {
     let { recipe, checked } = this.state
     let check = checked === false ? true : false
     if(check === true) {
@@ -75,7 +75,7 @@ class FavoritesSubmit extends React.Component {
         }
 
         <IngredientsSubmit
-          favoritesSubmitHandler={this.favoritesSubmitHandler}
+          favoritesSubmit={this.favoritesSubmit}
           ingredients={this.props.ingredients}
           responseOk={responseOk}
         />
