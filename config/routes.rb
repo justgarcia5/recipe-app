@@ -3,14 +3,17 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :recipes do
-      resources :ingredients do
-      end
+      resources :ingredients
     end
+  end
+
+  resources :users do
+    resources :reviews
   end
 
   resources :recipes
   resources :ingredients
-
+  resources :reviews
 
   get '/*path', to: 'pages#index', constraints: ->(request){ request.format.html? }
   root to: 'pages#index'

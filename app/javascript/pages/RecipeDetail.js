@@ -9,7 +9,8 @@ const APP_ID = '61f1760b'
 class RecipeDetail extends React.Component {
   state = {
     recipes: [],
-    ingredients: []
+    ingredients: [],
+    comment: ''
   }
 
   componentDidMount = () => {
@@ -26,6 +27,10 @@ class RecipeDetail extends React.Component {
         })
       })
   }
+
+  // commentSubmit = () => {
+  //   fetch(``)
+  // }
 
   render() {
     return (

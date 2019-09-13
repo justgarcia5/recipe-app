@@ -31,7 +31,7 @@ class RecipesController < ApplicationController
     @recipe.destroy
 
     respond_to do |format|
-      format.html { redirect_to @recipe, notice: 'Tool was successfully destroyed.' }
+      format.html { redirect_to @recipe, notice: 'Recipe was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
