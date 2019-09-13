@@ -9,7 +9,6 @@ class Blog extends React.Component {
   }
 
   handleSubmit = (e) => {
-    // e.preventDefault()
     let { comment, username } = this.state
     fetch(`/reviews.json`, {
       method: 'POST',
@@ -43,8 +42,8 @@ class Blog extends React.Component {
     return(
       <div>
         <h1>Blog</h1>
-        <form onSubmit={this.handleSubmit}>
-          <textarea value={this.state.comment} onChange={this.inputHandler}/>
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <textarea value={this.state.comment} onChange={this.inputHandler.bind(this)}/>
           <button type="submit">Submit</button>
         </form>
         <div>

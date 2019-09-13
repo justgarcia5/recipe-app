@@ -3,25 +3,23 @@ import React from 'react'
 class IngredientsSubmit extends React.Component {
   state = {
     ingredient: {
-        text: '',
-        weight: ''
+        text: [],
+        weight: []
     }
   }
 
   componentDidMount = () => {
     let text = this.props.ingredients.map((ingredient, index) => {
-      return ingredient.map((ingredient, index) => {
-        return ingredient
-      })
+      return ingredient.map((ingredient, index) => ingredient.text)
     })
 
     let weight = this.props.ingredients.map((ingredient, index) => {
       return ingredient.map((ingredient) => ingredient.weight)
     })
-    console.log(Array.text, weight)
+    console.log(text, weight)
     this.setState({ ingredient: {
-      text: text,
-      weight: weight
+      text: 'this better work',
+      weight: 12.333
     }})
   }
 
@@ -43,7 +41,7 @@ class IngredientsSubmit extends React.Component {
   }
 
   render() {
-    console.log(this.state.ingredient)
+    // console.log(this.state.ingredient)
 
     return(
       <div>
