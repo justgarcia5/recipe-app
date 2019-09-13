@@ -6,8 +6,7 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @recipe = current_user.recipes.find(params[:recipe_id])
-    @ingredient = @recipe.ingredients.build(ingredient_params)
+    @ingredient = Ingredient.create(ingredient_params)
 
     respond_to do |format|
       if @ingredient.save
