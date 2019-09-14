@@ -1,12 +1,18 @@
 class IngredientsController < ApplicationController
+  before_action :set_ingredient, only: [:destroy]
   skip_before_action :verify_authenticity_token
+
+  def index
+    @ingredients = Ingredient.all
+  end
 
   def new
     @ingredient = Ingredient.new
   end
 
   def create
-    @ingredient = Ingredient.create(ingredient_params)
+    @recipe = current_user.recipes.new
+    @ingredient = @recipe.ingredients.new(ingredient_params)
 
     respond_to do |format|
       if @ingredient.save
@@ -19,7 +25,21 @@ class IngredientsController < ApplicationController
     end
   end
 
+  def destroy
+    @ingredient.destroy
+
+    respond_to do |format|
+      format.html { redirect_to @ingredient }
+      format.json { head :no_content }
+    end
+  end
+
   private
+
+  def set_ingredient
+    @ingredient = Ingredient.find(params[:id])
+  end
+
   def ingredient_params
     params.require(:ingredient).permit(:text, :weight)
   end

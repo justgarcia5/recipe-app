@@ -6,7 +6,6 @@ class FavoritesSubmit extends React.Component {
   state = {
     checked: false,
     responseOk: false,
-    errors: null,
     filteredLabels: false,
     recipe:
       {
@@ -51,9 +50,7 @@ class FavoritesSubmit extends React.Component {
           }
           return json
         })
-      }).catch((errors) => {
-        this.setState({ errors: {"System Error": ["Unknown problem has occurred"]} })
-      })
+      }).catch((errors) => console.log(errors))
     } else {
       this.setState({ checked: check})
     }
@@ -75,7 +72,7 @@ class FavoritesSubmit extends React.Component {
         }
 
         <IngredientsSubmit
-          favoritesSubmit={this.favoritesSubmit}
+          favoritesSubmit={this.favoritesSubmit.bind(this)}
           ingredients={this.props.ingredients}
           responseOk={responseOk}
         />

@@ -18,14 +18,15 @@ class IngredientsSubmit extends React.Component {
     })
     console.log(text, weight)
     this.setState({ ingredient: {
-      text: 'this better work',
-      weight: 12.333
+      text: text,
+      weight: weight,
     }})
   }
 
-  ingredientsSubmit = () => {
-    let { ingredient } = this.state
+  ingredientsSubmit = (e) => {
+    e.preventDefault()
     this.props.favoritesSubmit()
+    let { ingredient } = this.state
     fetch('/ingredients.json', {
       method: 'POST',
       headers: {
@@ -34,14 +35,12 @@ class IngredientsSubmit extends React.Component {
       body: JSON.stringify({ ingredient: ingredient })
     }).then((response) => response.json())
     .then((ingredients) => ingredients)
-    .catch((errors) => {
-      console.log(errors)
-      this.setState({ errors: {"System Error": ["Unknown problem has occurred"]} })
-    })
+    .catch((errors) => console.log(errors))
   }
 
   render() {
-    // console.log(this.state.ingredient)
+    // console.log(this.state.ingredient.text)
+    // this.props.favoritesSubmit()
 
     return(
       <div>
