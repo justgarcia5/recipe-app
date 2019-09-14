@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 2019_09_13_002330) do
   enable_extension "plpgsql"
 
   create_table "ingredients", force: :cascade do |t|
-    t.text "text", default: [], array: true
-    t.integer "weight", default: [], array: true
+    t.text "text"
+    t.integer "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "recipe_id"
