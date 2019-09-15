@@ -24,6 +24,16 @@ ActiveRecord::Schema.define(version: 2019_09_13_002330) do
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
+  create_table "posts", force: :cascade do |t|
+    t.text "title"
+    t.text "body"
+    t.text "username"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "recipes", force: :cascade do |t|
     t.text "label"
     t.string "source"
@@ -35,15 +45,6 @@ ActiveRecord::Schema.define(version: 2019_09_13_002330) do
     t.datetime "updated_at", null: false
     t.bigint "user_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
-  end
-
-  create_table "reviews", force: :cascade do |t|
-    t.text "comment"
-    t.text "username"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.bigint "user_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -61,6 +62,6 @@ ActiveRecord::Schema.define(version: 2019_09_13_002330) do
   end
 
   add_foreign_key "ingredients", "recipes"
+  add_foreign_key "posts", "users"
   add_foreign_key "recipes", "users"
-  add_foreign_key "reviews", "users"
 end
