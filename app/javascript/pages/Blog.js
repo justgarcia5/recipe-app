@@ -2,39 +2,38 @@ import React from 'react'
 
 class Blog extends React.Component {
   state = {
-    comment: '',
-    comments: [],
-    username: this.props.currentUser.username,
-    usernames: ''
+    post: {
+      title: '',
+      body: '',
+      username: this.props.currentUser.username,
+    },
+    posts: [],
   }
 
   handleSubmit = (e) => {
-    let { comment, username } = this.state
-    fetch(`/reviews.json`, {
+    let { post } = this.state
+    fetch(`/posts.json`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ comment: comment, username: username })
+      body: JSON.stringify({ post: post })
     }).then((response) => response.json())
-      .then((comment) => comment)
-      .catch((errors) => {
-        console.log(errors)
-      })
-    this.setState({ comment: '' })
+      .then((post) => post)
+      .catch((errors) => console.log(errors))
   }
 
   componentDidMount = () => {
-    fetch(`/reviews.json`)
+    fetch(`/posts.json`)
     .then((response) => response.json())
-    .then((comments) => {
-      console.log(comments)
-      this.setState({ comments: comments })
-    })
+    .then((posts) => this.setState({ posts: posts }))
+    .catch((errors) => console.log(errors))
   }
 
-  inputHandler = (e) => {
-    this.setState({  comment: e.target.value })
+  handleChange = (event) => {
+    let { post } = this.state
+    post[event.target.name] = event.target.value
+    this.setState({ post: post })
   }
 
   render() {
@@ -42,17 +41,35 @@ class Blog extends React.Component {
     return(
       <div>
         <h1>Blog</h1>
-        <form onSubmit={this.handleSubmit.bind(this)}>
-          <textarea value={this.state.comment} onChange={this.inputHandler.bind(this)}/>
+        <form onSubmit={this.handleSubmit}>
+          <label htmlFor="title">Title:</label>
+          <br/>
+          <input
+            value={this.state.post.title}
+            onChange={this.handleChange}
+            type="input"
+            name="title"
+            />
+          <br/>
+          <label htmlFor="blog">Blog:</label>
+          <br/>
+          <textarea
+            value={this.state.post.body}
+            onChange={this.handleChange}
+            type="textarea"
+            name="body"
+          />
           <button type="submit">Submit</button>
         </form>
+        <hr/>
         <div>
-          { this.state.comments.map((comment, index) => {
+          { this.state.posts.map((post, index) => {
               return(
                 <div key={index}>
-                  <h3>{comment.username}</h3>
-                  <p>{comment.comment}</p>
-                  <p>{comment.created_at}</p>
+                  <h3>{post.title}</h3>
+                  <p><i>by</i> <b>{post.username}</b></p>
+                  <p>{post.body}</p>
+                  <p>{post.created_at}</p>
                   <hr/>
                 </div>
               )
