@@ -1,5 +1,7 @@
 import React from 'react'
 
+import Comment from '../components/Comment'
+
 class Blog extends React.Component {
   state = {
     post: {
@@ -70,6 +72,10 @@ class Blog extends React.Component {
                   <p><i>by</i> <b>{post.username}</b></p>
                   <p>{post.body}</p>
                   <p>{post.created_at}</p>
+                  <Comment
+                    postId={post.id}
+                    username={this.props.currentUser.username}
+                  />
                   <hr/>
                 </div>
               )
