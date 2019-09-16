@@ -4,7 +4,7 @@ import {
 
 } from 'react-router-dom'
 
-import IngredientView from '../components/IngredientView'
+import IngredientView from '../components/recipes/IngredientView'
 
 class FavoritesDetailPage extends React.Component {
   state = {

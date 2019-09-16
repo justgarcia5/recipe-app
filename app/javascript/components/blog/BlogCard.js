@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Comment from '../components/Comment'
+import Comment from '../blog/Comment'
 
 const BlogCard = props => {
   return(

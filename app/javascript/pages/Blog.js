@@ -1,7 +1,7 @@
 import React from 'react'
 
-import BlogForm from '../components/BlogForm'
-import BlogCard from '../components/BlogCard'
+import BlogForm from '../components/blog/BlogForm'
+import BlogCard from '../components/blog/BlogCard'
 
 class Blog extends React.Component {
   state = {
