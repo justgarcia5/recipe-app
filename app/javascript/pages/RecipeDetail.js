@@ -1,7 +1,7 @@
 import React from 'react';
-import DailyNutrients from '../components/DailyNutrients';
-import TotalNutrients from '../components/TotalNutrients';
-import FavoritesSubmit from '../components/FavoritesSubmit'
+import DailyNutrients from '../components/recipes/DailyNutrients';
+import TotalNutrients from '../components/recipes/TotalNutrients';
+import FavoritesSubmit from '../components/recipes/FavoritesSubmit'
 
 const APP_KEY = 'b553d12844b50e38e7f0426de87800e2'
 const APP_ID = '61f1760b'

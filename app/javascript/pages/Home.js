@@ -1,6 +1,6 @@
 import React from 'react';
 
-import RecipeApi from '../components/RecipeApi';
+import RecipeApi from '../components/recipes/RecipeApi';
 
 function Home() {
   return (

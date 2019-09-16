@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Errors from './Errors'
+import Errors from '../Errors'
 import RecipeCards from './RecipeCards';
 
 const RecipesLanding = props => {
