@@ -523,7 +523,24 @@ table, th, td {
   padding-top: 100px;
 }
 
-/*
-* {
-   font-family: 'Manjari', sans-serif;
-} */
+.blog-form {
+  padding: 30px;
+  width: 70%;
+  margin: auto;
+  text-align: left;
+}
+
+.blog-div {
+  text-align: center;
+  font-family: 'Manjari', sans-serif;
+}
+
+.blog-cards {
+  margin: auto;
+  margin-bottom: 30px;
+  border: 1px solid black;
+  width: 70%;
+  text-align: left;
+  padding-left: 20px;
+  padding-bottom: 13px;
+}

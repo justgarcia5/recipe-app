@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+// import axios from'axios';
 
 import CommentForm from './CommentForm';
 
 function Comment(props) {
-  const [comments, setData] = useState({ comments: [] });
+  const [comments, setComments] = useState({ comments: [] });
+  const [errors, setErrors] = useState({ errors: [] });
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(
-        `/comments.json`,
-      );
-      setData(result.comments);
-    };
+    async function fetchData() {
+      const res = await fetch("/comments.json");
+      // console.log(res)
+      res
+        .json()
+        .then(res => setComments(res))
+        .catch(err => setErrors(err));
+    }
+
     fetchData();
-  }, []);
+  });
 
   return(
     <div>
@@ -23,6 +27,16 @@ function Comment(props) {
         postId={props.postId}
         username={props.username}
       />
+      {/* {comments.map((comment) => {
+        return(
+          <div>
+            <p><i>by</i> {comment.username}</p>
+            <p>{comment.body}</p>
+          </div>
+        )
+      })
+
+      } */}
     </div>
   )
 }

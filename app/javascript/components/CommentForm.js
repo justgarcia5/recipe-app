@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 
 function CommentForm(props) {
-  console.log(props)
+  // console.log(props.comments)
   const [body, setBody] = useState('');
   const [username, setUsername] = useState('')
 
