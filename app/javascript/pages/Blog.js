@@ -1,6 +1,7 @@
 import React from 'react'
 
-import Comment from '../components/Comment'
+import BlogForm from '../components/BlogForm'
+import BlogCard from '../components/BlogCard'
 
 class Blog extends React.Component {
   state = {
@@ -42,45 +43,18 @@ class Blog extends React.Component {
 
     return(
       <div>
-        <h1>Blog</h1>
-        <form onSubmit={this.handleSubmit}>
-          <label htmlFor="title">Title:</label>
-          <br/>
-          <input
-            value={this.state.post.title}
-            onChange={this.handleChange}
-            type="input"
-            name="title"
-            />
-          <br/>
-          <label htmlFor="blog">Blog:</label>
-          <br/>
-          <textarea
-            value={this.state.post.body}
-            onChange={this.handleChange}
-            type="textarea"
-            name="body"
+        <div className='blog-div'>
+          <BlogForm
+            handleSubmit={this.handleSubmit}
+            post={this.state.post}
+            handleChange={this.handleChange}
           />
-          <button type="submit">Submit</button>
-        </form>
-        <hr/>
+        </div>
         <div>
-          { this.state.posts.map((post, index) => {
-              return(
-                <div key={index}>
-                  <h3>{post.title}</h3>
-                  <p><i>by</i> <b>{post.username}</b></p>
-                  <p>{post.body}</p>
-                  <p>{post.created_at}</p>
-                  <Comment
-                    postId={post.id}
-                    username={this.props.currentUser.username}
-                  />
-                  <hr/>
-                </div>
-              )
-            })
-          }
+          <BlogCard
+            posts={this.state.posts}
+            username={this.props.currentUser.username}
+          />
         </div>
       </div>
     )

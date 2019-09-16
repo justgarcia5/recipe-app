@@ -11,7 +11,7 @@ class IngredientsController < ApplicationController
   end
 
   def create
-    @recipe = current_user.recipes.new
+    @recipe = current_user.recipes.find(params[:recipe_id])
     @ingredient = @recipe.ingredients.new(ingredient_params)
 
     respond_to do |format|
