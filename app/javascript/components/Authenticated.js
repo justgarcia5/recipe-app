@@ -30,7 +30,6 @@ class Authenticated extends React.Component {
     let { currentUser, recipes } = this.state
     return (
       <div>
-        <link href="https://fonts.googleapis.com/css?family=Manjari|Monoton&display=swap" rel="stylesheet"></link>
         <Router>
           <div>
             <Switch>

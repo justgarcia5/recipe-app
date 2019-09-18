@@ -22,7 +22,9 @@ const BlogForm = props => {
             type="textarea"
             name="body"
           />
-          <button type="submit">Submit</button>
+          <div>
+            <button type="submit">Submit</button>
+          </div>
         </form>
     </div>
   )

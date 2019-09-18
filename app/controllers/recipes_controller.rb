@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @recipes = current_user.recipes.all
+      @recipes = current_user.recipes.all
   end
 
   def show
@@ -19,7 +19,7 @@ class RecipesController < ApplicationController
     respond_to do |format|
       if @recipe.save
         format.html { redirect_to @recipe }
-        format.json { render :index, status: :created, location: @recipe }
+        format.json { render :show, status: :created, location: @recipe }
       else
         format.html { render :new }
         format.json { render json: @recipe.errors, status: :unprocessable_entity }

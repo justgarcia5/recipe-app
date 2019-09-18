@@ -11,8 +11,8 @@ const RecipeCards = props => {
           return (
             <div key={index} className='recipe-card'>
               <Link to={`/recipe-detail/${index}/${hit.recipe.label}`} data={props.hits}>
+                <img src={hit.recipe.image} alt='recipe-pic' className='recipe-image' />
                 <ul>
-                  <li><img src={hit.recipe.image} alt='recipe-pic' className='recipe-image' /></li>
                   <hr/>
                   <li className='recipe-label'>{hit.recipe.label}</li>
                   {/* <li>{hit.recipe.source}</li> */}

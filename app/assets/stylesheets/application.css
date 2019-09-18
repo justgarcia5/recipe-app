@@ -172,15 +172,17 @@
 .recipe-input {
   list-style-type: none;
   margin: auto;
+  margin-bottom: 30px;
 }
 
 .recipe-card {
   margin: 30px auto;
   padding: 30px;
   border-radius: 5px;
-  width: 300px;
+  width: 350px;
   opacity: .9;
   background-color: white;
+
 }
 
 @media screen and (max-width: 500px) {
@@ -425,13 +427,6 @@ table, th, td {
 }
 
 .delete-button {
-  /* font-size: 12px;
-  padding: 8px;
-  border-radius: 5px;
-  background-color: rgb(235, 152, 152);
-  cursor: pointer;
-  text-align: center;
-  margin-left: 13px; */
   text-decoration: none;
 }
 
@@ -523,30 +518,92 @@ table, th, td {
   padding-top: 100px;
 }
 
-.blog-form {
-  padding: 30px;
-  width: 70%;
-  margin: auto;
-  text-align: left;
+.comment-list .row {
+  margin-bottom: 0px;
+}
+.comment-list .panel .panel-heading {
+  padding: 4px 15px;
+  position: absolute;
+  border:none;
+  border-top-right-radius:0px;
+  top: 1px;
+}
+.comment-list .panel .panel-heading.right {
+  border-right-width: 0px;
+  border-top-left-radius:0px;
+  right: 16px;
+}
+.comment-list .panel .panel-heading .panel-body {
+  padding-top: 6px;
+}
+.comment-list figcaption {
+  word-wrap: break-word;
+}
+@media (min-width: 768px) {
+  .comment-list .arrow:after, .comment-list .arrow:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent;
+  }
+  .comment-list .panel.arrow.left:after, .comment-list .panel.arrow.left:before {
+    border-left: 0;
+  }
+
+  .comment-list .panel.arrow.left:before {
+    left: 0px;
+    top: 30px;
+    border-right-color: inherit;
+    border-width: 16px;
+  }
+
+  .comment-list .panel.arrow.left:after {
+    left: 1px;
+    top: 31px;
+    border-right-color: #FFFFFF;
+    border-width: 15px;
+  }
+
+  .comment-list .panel.arrow.right:before {
+    right: -16px;
+    top: 30px;
+    border-left-color: inherit;
+    border-width: 16px;
+  }
+
+  .comment-list .panel.arrow.right:after {
+    right: -14px;
+    top: 31px;
+    border-left-color: #FFFFFF;
+    border-width: 15px;
+  }
+}
+.comment-list .comment-post {
+  margin-top: 6px;
 }
 
 .blog-div {
   text-align: center;
+  margin:auto;
   font-family: 'Manjari', sans-serif;
 }
 
-.blog-cards {
-  margin: auto;
-  margin-bottom: 30px;
-  border: 1px solid black;
-  width: 70%;
-  text-align: left;
-  padding-left: 20px;
-  padding-bottom: 13px;
-  border-radius: 8px;
-  box-shadow: 2px 4px grey;
+.container {
+  font-family: 'Manjari', sans-serif;
 }
 
-.blog-page-title {
-  font-size: 50px;
+.form-control-borderless {
+  border: none;
+}
+
+.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.search-icon {
+  padding:10px;
 }
