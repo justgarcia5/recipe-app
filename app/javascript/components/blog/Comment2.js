@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from'axios';
+import React from 'react';
 
 import CommentForm from './CommentForm';
 
@@ -9,7 +8,7 @@ class Comment2 extends React.Component {
   }
 
   componentDidMount = () => {
-    fetch(`/users/${this.props.currentUser.id}/posts/${this.props.postId}/comments.json`)
+    fetch(`/comments.json`)
     .then((res) => res.json())
     .then((comments) => {
       this.setState({ comments: comments})
@@ -17,7 +16,7 @@ class Comment2 extends React.Component {
   }
 
   render() {
-    // console.log(this.props.postId)
+    console.log(this.state.comments)
     return(
       <div>
         <p><b>comments:</b></p>
@@ -26,6 +25,7 @@ class Comment2 extends React.Component {
             if(this.props.postId === comment.post_id) {
               return(
                 <div key={index}>
+                  <p><i>by</i><b> {comment.username}</b></p>
                   <p>{comment.body}</p>
                 </div>
               )

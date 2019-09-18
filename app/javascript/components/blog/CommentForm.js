@@ -15,7 +15,7 @@ class CommentForm extends React.Component {
     comment: {
       body: '',
       username: '',
-      post_id: null
+      // post_id: ''
     }
   }
 
@@ -24,7 +24,6 @@ class CommentForm extends React.Component {
       comment: {
         body: '',
         username: this.props.username,
-        post_id: this.props.postId
       }
     })
   }
@@ -32,7 +31,7 @@ class CommentForm extends React.Component {
   handleSubmit = (e) => {
     // e.preventDefault()
     let { comment } = this.state
-    fetch(`/users/${this.props.currentUser.id}/posts/${this.props.postId}/comments.json`, {
+    fetch(`/posts/${this.props.postId}/comments.json`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
