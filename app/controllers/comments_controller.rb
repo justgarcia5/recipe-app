@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :set_comment, only: [:destroy]
   skip_before_action :verify_authenticity_token
 
   def index
@@ -21,6 +22,10 @@ class CommentsController < ApplicationController
   end
 
   private
+
+  def set_comment
+    @comment = Comment.find(params[:id])
+  end
 
   def comment_params
     params.require(:comment).permit(:username, :body)

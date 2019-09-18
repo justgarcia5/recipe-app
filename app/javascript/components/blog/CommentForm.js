@@ -15,7 +15,6 @@ class CommentForm extends React.Component {
     comment: {
       body: '',
       username: '',
-      // post_id: ''
     }
   }
 
