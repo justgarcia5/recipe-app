@@ -8,17 +8,13 @@ Rails.application.routes.draw do
   end
 
   resources :users do
-    resources :posts
+    resources :posts do
+      resources :comments
+    end
   end
 
-
-  resources :posts do
-    resources :comments
-  end
-
+  resources :posts
   resources :recipes
-  resources :ingredients
-  resources :comments
 
   get '/*path', to: 'pages#index', constraints: ->(request){ request.format.html? }
   root to: 'pages#index'

@@ -11,6 +11,8 @@ class Blog extends React.Component {
       username: this.props.currentUser.username,
     },
     posts: [],
+    addBlog: false,
+    postId: [],
   }
 
   handleSubmit = (e) => {
@@ -29,7 +31,10 @@ class Blog extends React.Component {
   componentDidMount = () => {
     fetch(`/posts.json`)
     .then((response) => response.json())
-    .then((posts) => this.setState({ posts: posts }))
+    .then((posts) => {
+      let postId = posts.map((post) => post.id)
+      this.setState({ posts: posts, postId: postId })
+    })
     .catch((errors) => console.log(errors))
   }
 
@@ -40,7 +45,7 @@ class Blog extends React.Component {
   }
 
   render() {
-
+    // console.log(this.props)
     return(
       <div>
         <div className='blog-div'>
@@ -54,6 +59,8 @@ class Blog extends React.Component {
           <BlogCard
             posts={this.state.posts}
             username={this.props.currentUser.username}
+            postId={this.state.postId}
+            currentUser={this.props.currentUser}
           />
         </div>
       </div>

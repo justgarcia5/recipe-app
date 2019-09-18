@@ -3,7 +3,7 @@ import React from 'react'
 const BlogForm = props => {
   return(
     <div>
-      <h1>Blog</h1>
+      <h1 className='blog-page-title'>Blog</h1>
         <form onSubmit={props.handleSubmit} className='blog-form'>
           <label htmlFor="title">Title:</label>
           <br/>

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @posts = Post.order(id: :desc)
+    @posts = current_user.posts.order(id: :desc)
   end
 
   def new
