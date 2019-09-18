@@ -1,6 +1,10 @@
 class CommentsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
+  def index
+    @comments = Comment.all
+  end
+
   def create
     @post = current_user.posts.find(params[:post_id])
     @comment = @post.comments.build(comment_params)
@@ -8,7 +12,7 @@ class CommentsController < ApplicationController
     respond_to do |format|
       if @comment.save
         format.html { redirect_to @comment }
-        format.json { render :index, status: :created, location: @comment }
+        format.json { render :index, status: :created, location: user_path(@post, @comment) }
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

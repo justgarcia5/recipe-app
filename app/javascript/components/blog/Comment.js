@@ -1,42 +1,61 @@
 import React, { useState, useEffect } from 'react';
-// import axios from'axios';
+import axios from'axios';
 
 import CommentForm from './CommentForm';
 
 function Comment(props) {
-  const [comments, setComments] = useState({ comments: [] });
+  const [data, setData] = useState({ comments: [] });
   const [errors, setErrors] = useState({ errors: [] });
+  const [number, setNumber] = useState(1)
 
   useEffect(() => {
-    async function fetchData() {
-      const res = await fetch("/comments.json");
-      // console.log(res)
-      res
-        .json()
-        .then(res => setComments(res))
-        .catch(err => setErrors(err));
+    const fetchData = async () => {
+      const result = await axios(
+        '/comments.json',
+      );
+      // console.log(result.data)
+      setData(result.data);
+      setErrors(result.errors);
     }
-
     fetchData();
-  });
+    console.log(data)
+
+  }, []);
+
+  // const numberUp = () => {
+  //   setNumber(number+3)
+  //   console.log(number)
+  // }
 
   return(
     <div>
-      <CommentForm
-        comments={comments}
-        postId={props.postId}
-        username={props.username}
-      />
-      {/* {comments.map((comment) => {
+      <span>{JSON.stringify(data)}</span>
+      {/* <p onClick={numberUp}>Click Me</p>
+      <p>{number}</p> */}
+      {/* {data.comments.map((comment, value) => {
         return(
-          <div>
-            <p><i>by</i> {comment.username}</p>
+          <div key={value}>
             <p>{comment.body}</p>
           </div>
         )
-      })
-
-      } */}
+      })} */}
+      <p></p>
+      <CommentForm
+        comments={data.comments}
+        postId={props.postId}
+        username={props.username}
+      />
+      {/* <ul>
+        {
+          data.comments.map((comment, value) => {
+            return (
+              <li key={value}>
+                {comment.body}
+              </li>
+            )
+          })
+        }
+      </ul> */}
     </div>
   )
 }

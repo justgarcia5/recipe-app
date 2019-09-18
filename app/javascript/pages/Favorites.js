@@ -18,7 +18,7 @@ class Favorites extends React.Component {
 
   render () {
     let { recipes } = this.state
-    // console.log(recipes, this.props)
+    console.log(this.props.currentUser)
     return (
       <div className='favorites-div'>
         <div className='favorites-landing'>
