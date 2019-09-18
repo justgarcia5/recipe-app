@@ -13,7 +13,6 @@ class Unauthenticated extends React.Component {
   render() {
     return (
       <div>
-        <link href="https://fonts.googleapis.com/css?family=Manjari|Monoton&display=swap" rel="stylesheet"></link>
         <Router>
           <div>
             <Switch>

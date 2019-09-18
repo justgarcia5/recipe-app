@@ -11,22 +11,43 @@ class Comment2 extends React.Component {
     fetch(`/comments.json`)
     .then((res) => res.json())
     .then((comments) => {
-      this.setState({ comments: comments})
+      this.setState({ comments: comments })
     })
   }
 
   render() {
-    console.log(this.state.comments)
+    console.log(this.props.username)
     return(
       <div>
-        <p><b>comments:</b></p>
         {
           this.state.comments.map((comment, index) => {
             if(this.props.postId === comment.post_id) {
               return(
                 <div key={index}>
-                  <p><i>by</i><b> {comment.username}</b></p>
-                  <p>{comment.body}</p>
+                  <article className="row">
+                    <div className="col-md-2 col-sm-2 col-md-offset-1 col-sm-offset-0 hidden-xs">
+                      <figure className="thumbnail">
+                        <img className="img-responsive" src="http://www.tangoflooring.ca/wp-content/uploads/2015/07/user-avatar-placeholder.png" />
+                        <figcaption className="text-center">{comment.username}</figcaption>
+                      </figure>
+                    </div>
+                    <div className="col-md-9 col-sm-9">
+                      <div className="panel panel-default arrow left">
+                        <div className="panel-heading right">Reply to {this.props.postUsername}</div>
+                        <div className="panel-body">
+                          <header className="text-left">
+                            <div className="comment-user"><i className="fa fa-user"></i> {comment.username}</div>
+                            <time className="comment-date" ><i className="fa fa-clock-o"></i> {comment.created_at}</time>
+                          </header>
+                          <br/>
+                          <div className="comment-post">
+                            <p>{comment.body}</p>
+                          </div>
+                          <p className="text-right"><a className="btn btn-default btn-sm"><i className="fa fa-reply"></i> reply</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
                 </div>
               )
             }
