@@ -7,6 +7,7 @@ gem 'webpacker'
 gem 'react-rails'
 gem "devise", ">= 4.7.1"
 gem 'figaro'
+gem 'paper_trail'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
