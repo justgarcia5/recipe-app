@@ -44,8 +44,8 @@ class RecipeDetail extends React.Component {
                 <div className='detail-page-row-1'>
                   <div>
                     <img src={recipe.image} alt='recipe' className='recipe-detail-image' />
-                    <p><b>Source:</b> {recipe.source}</p>
-                    <p><b>Total Calories:</b> {Math.floor(recipe.calories)}</p>
+                    <p><i>Source: </i> {recipe.source}</p>
+                    <p><i>Total Calories: </i> {Math.floor(recipe.calories)}</p>
                     {this.props.currentUser &&
                       <FavoritesSubmit
                       recipe={recipe}
