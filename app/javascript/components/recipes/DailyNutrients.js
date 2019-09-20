@@ -4,7 +4,6 @@ const DailyNutrients = props => {
   return (
     <div className='daily-nutrients'>
       <h2>Daily Nutrients</h2>
-
       <table>
         <tbody>
           <tr>
