@@ -7,6 +7,7 @@ class FavoritesSubmit extends React.Component {
     checked: false,
     responseOk: false,
     filteredLabels: false,
+    filteredRecipeId: '',
     recipe:
       {
         calories: '',
@@ -19,7 +20,9 @@ class FavoritesSubmit extends React.Component {
   }
 
   componentDidMount = () => {
+    let recipeId = this.props.recipes.filter((recipe) => recipe.user_id  )
     this.setState({
+      filteredRecipeId: recipeId,
       recipe:
       {
         calories: this.props.recipe.calories,
@@ -57,6 +60,8 @@ class FavoritesSubmit extends React.Component {
   }
 
   render () {
+    console.log(this.props.currentUser.id, this.props.recipes, this.state.filteredRecipeId)
+
     let { filteredLabels, responseOk } = this.state
     let favPointStyle = {
       cursor: 'pointer',
@@ -75,6 +80,8 @@ class FavoritesSubmit extends React.Component {
           favoritesSubmit={this.favoritesSubmit.bind(this)}
           ingredients={this.props.ingredients}
           responseOk={responseOk}
+          filteredRecipeId={this.state.filteredRecipeId}
+          currentUser={this.props.currentUser}
         />
       </div>
     )
