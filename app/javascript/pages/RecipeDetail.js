@@ -28,10 +28,6 @@ class RecipeDetail extends React.Component {
       })
   }
 
-  // commentSubmit = () => {
-  //   fetch(``)
-  // }
-
   render() {
     return (
       <div className='recipe-detail'>
@@ -51,6 +47,7 @@ class RecipeDetail extends React.Component {
                       recipe={recipe}
                       recipes={this.props.recipes}
                       ingredients={this.state.ingredients}
+                      currentUser={this.props.currentUser}
                     />
                     }
                   </div>

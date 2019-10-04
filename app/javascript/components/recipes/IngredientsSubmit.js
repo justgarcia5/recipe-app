@@ -27,7 +27,7 @@ class IngredientsSubmit extends React.Component {
     e.preventDefault()
     this.props.favoritesSubmit()
     let { ingredient } = this.state
-    fetch('/ingredients.json', {
+    fetch(`/recipes/${this.props.filteredRecipeId}/ingredients.json`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -39,8 +39,6 @@ class IngredientsSubmit extends React.Component {
   }
 
   render() {
-    // console.log(this.state.ingredient.text)
-    // this.props.favoritesSubmit()
 
     return(
       <div>
