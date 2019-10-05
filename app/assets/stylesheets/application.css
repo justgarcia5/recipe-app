@@ -29,7 +29,7 @@
 }
 
 .navbar-right a {
-  text-decoration: none;
+  text-decoration: none!important;
   color: black;
 }
 
@@ -44,10 +44,14 @@
   }
 }
 
+a {
+  text-decoration: none!important;
+}
+
 .NavBar-home {
   display: block;
   color: rgb(12, 10, 10);
-  text-decoration: none;
+  text-decoration: none!important;
   font-size: 35px;
   font-family: 'Monoton', cursive!important;
   float: left;
@@ -612,16 +616,23 @@ table, th, td {
 }
 
 .blog-div {
-  text-align: center;
-  margin:auto;
+  /* text-align: center; */
+  margin: auto;
+  width: 60%;
   font-family: 'Manjari', sans-serif;
+}
+
+.blog-page-title {
+  text-align: center;
+  margin: 50px;
+  font-size: 50px;
 }
 
 .container {
   font-family: 'Manjari', sans-serif;
 }
 
-.form-control-borderless {
+/* .form-control-borderless {
   border: none;
 }
 
@@ -629,7 +640,7 @@ table, th, td {
   border: none;
   outline: none;
   box-shadow: none;
-}
+} */
 
 .search-icon {
   padding:10px;

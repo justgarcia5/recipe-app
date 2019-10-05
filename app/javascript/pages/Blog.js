@@ -44,16 +44,30 @@ class Blog extends React.Component {
     this.setState({ post: post })
   }
 
+  newBlogForm = () => {
+    this.setState({ addBlog: true })
+  }
+
   render() {
+    console.log(this.state.addBlog)
+
     // console.log(this.props)
     return(
       <div>
         <div className='blog-div'>
-          <BlogForm
-            handleSubmit={this.handleSubmit}
-            post={this.state.post}
-            handleChange={this.handleChange}
-          />
+          <h1 className='blog-page-title'>Kitchen Blogs</h1>
+          {this.state.addBlog &&
+            <BlogForm
+              handleSubmit={this.handleSubmit}
+              post={this.state.post}
+              handleChange={this.handleChange}
+            />
+          }
+          {!this.state.addBlog &&
+            <div>
+              <button onClick={this.newBlogForm}>New Blog</button>
+            </div>
+          }
         </div>
         <div>
           <BlogCard

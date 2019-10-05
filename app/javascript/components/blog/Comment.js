@@ -22,11 +22,6 @@ function Comment(props) {
 
   }, []);
 
-  // const numberUp = () => {
-  //   setNumber(number+3)
-  //   console.log(number)
-  // }
-
   return(
     <div>
       <span>{JSON.stringify(data)}</span>

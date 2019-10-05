@@ -16,7 +16,7 @@ class Comment2 extends React.Component {
   }
 
   render() {
-    console.log(this.props.username)
+    // console.log(this.props.username)
     return(
       <div>
         {

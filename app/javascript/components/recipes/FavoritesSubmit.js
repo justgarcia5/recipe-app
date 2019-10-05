@@ -60,7 +60,7 @@ class FavoritesSubmit extends React.Component {
   }
 
   render () {
-    console.log(this.props.currentUser.id, this.props.recipes, this.state.filteredRecipeId)
+    // console.log(this.props.currentUser.id, this.props.recipes, this.state.filteredRecipeId)
 
     let { filteredLabels, responseOk } = this.state
     let favPointStyle = {
