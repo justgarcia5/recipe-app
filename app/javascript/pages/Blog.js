@@ -64,7 +64,7 @@ class Blog extends React.Component {
             />
           }
           {!this.state.addBlog &&
-            <div>
+            <div className='new-blog-button-div'>
               <button onClick={this.newBlogForm}>New Blog</button>
             </div>
           }

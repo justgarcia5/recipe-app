@@ -632,15 +632,9 @@ table, th, td {
   font-family: 'Manjari', sans-serif;
 }
 
-/* .form-control-borderless {
-  border: none;
+.new-blog-button-div {
+  text-align: center;
 }
-
-.form-control-borderless:hover, .form-control-borderless:active, .form-control-borderless:focus {
-  border: none;
-  outline: none;
-  box-shadow: none;
-} */
 
 .search-icon {
   padding:10px;
