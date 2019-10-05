@@ -1,14 +1,12 @@
 import React from 'react';
 
-import CommentForm from './CommentForm';
-
-class Comment2 extends React.Component {
+class CommentCard extends React.Component {
   state = {
     comments: [],
   }
 
   componentDidMount = () => {
-    fetch(`/comments.json`)
+    fetch(`/posts/${this.props.postId}/comments.json`)
     .then((res) => res.json())
     .then((comments) => {
       this.setState({ comments: comments })
@@ -33,7 +31,6 @@ class Comment2 extends React.Component {
                     </div>
                     <div className="col-md-9 col-sm-9">
                       <div className="panel panel-default arrow left">
-                        <div className="panel-heading right">Reply to {this.props.postUsername}</div>
                         <div className="panel-body">
                           <header className="text-left">
                             <div className="comment-user"><i className="fa fa-user"></i> {comment.username}</div>
@@ -41,9 +38,9 @@ class Comment2 extends React.Component {
                           </header>
                           <br/>
                           <div className="comment-post">
+                            <p>{comment.post_id}</p>
                             <p>{comment.body}</p>
                           </div>
-                          <p className="text-right"><a className="btn btn-default btn-sm"><i className="fa fa-reply"></i> reply</a></p>
                         </div>
                       </div>
                     </div>
@@ -53,14 +50,9 @@ class Comment2 extends React.Component {
             }
           })
         }
-        <CommentForm
-          username={this.props.username}
-          postId={this.props.postId}
-          currentUser={this.props.currentUser}
-        />
       </div>
     )
   }
 }
 
-export default Comment2;
+export default CommentCard;

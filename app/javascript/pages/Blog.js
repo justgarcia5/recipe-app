@@ -5,27 +5,9 @@ import BlogCard from '../components/blog/BlogCard'
 
 class Blog extends React.Component {
   state = {
-    post: {
-      title: '',
-      body: '',
-      username: this.props.currentUser.username,
-    },
     posts: [],
     addBlog: false,
-    postId: [],
-  }
-
-  handleSubmit = (e) => {
-    let { post } = this.state
-    fetch(`/posts.json`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({ post: post })
-    }).then((response) => response.json())
-      .then((post) => post)
-      .catch((errors) => console.log(errors))
+    addComment: false,
   }
 
   componentDidMount = () => {
@@ -38,43 +20,48 @@ class Blog extends React.Component {
     .catch((errors) => console.log(errors))
   }
 
-  handleChange = (event) => {
-    let { post } = this.state
-    post[event.target.name] = event.target.value
-    this.setState({ post: post })
-  }
-
   newBlogForm = () => {
     this.setState({ addBlog: true })
   }
 
-  render() {
-    console.log(this.state.addBlog)
+  newCommentForm = () => {
+    this.setState({ addComment: true })
+  }
 
-    // console.log(this.props)
+  refreshPage = () => {
+    window.location.reload(false);
+  }
+
+  render() {
+    let { addBlog, posts, postId, addComment } = this.state
+
     return(
       <div>
         <div className='blog-div'>
           <h1 className='blog-page-title'>Kitchen Blogs</h1>
-          {this.state.addBlog &&
+          {addBlog &&
+          <div>
             <BlogForm
-              handleSubmit={this.handleSubmit}
-              post={this.state.post}
-              handleChange={this.handleChange}
+              currentUser={this.props.currentUser}
+              refreshPage={this.refreshPage}
             />
+          </div>
           }
-          {!this.state.addBlog &&
-            <div className='new-blog-button-div'>
-              <button onClick={this.newBlogForm}>New Blog</button>
-            </div>
+          {!addBlog &&
+          <div className='new-blog-button-div'>
+            <button className='btn btn-primary' onClick={this.newBlogForm}>New Blog</button>
+          </div>
           }
         </div>
         <div>
           <BlogCard
-            posts={this.state.posts}
+            posts={posts}
             username={this.props.currentUser.username}
-            postId={this.state.postId}
+            postId={postId}
             currentUser={this.props.currentUser}
+            newCommentForm={this.newCommentForm}
+            addComment={addComment}
+            refreshPage={this.refreshPage}
           />
         </div>
       </div>

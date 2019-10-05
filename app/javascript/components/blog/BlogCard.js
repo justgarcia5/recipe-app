@@ -1,9 +1,11 @@
 import React from 'react'
 
-import Comment2 from '../blog/Comment2'
+import CommentCard from './CommentCard'
+import CommentForm from '../blog/CommentForm'
 
 const BlogCard = props => {
-  // console.log(props.postId)
+
+  console.log(props)
   return(
     <div>
       { props.posts.map((post, index) => {
@@ -29,19 +31,33 @@ const BlogCard = props => {
                             </header>
                             <br/>
                             <div className="comment-post">
+                              <p>{post.id}</p>
                               <p>{post.body}</p>
                             </div>
-                            <p className="text-right"><a href="#" className="btn btn-default btn-sm"><i className="fa fa-reply"></i> reply</a></p>
                           </div>
                         </div>
                       </div>
                     </article>
-                    <Comment2
-                      username={props.username}
-                      postId={post.id}
-                      postUsername={post.username}
-                    />
                   </div>
+                </div>
+                <CommentCard
+                  username={props.username}
+                  postId={post.id}
+                  postUsername={post.username}
+                  refreshPage={props.refreshPage}
+                  addComment={props.addComment}
+                  newCommentForm={props.newCommentForm}
+                />
+                {props.addComment &&
+                <CommentForm
+                  username={props.username}
+                  postId={post.id}
+                  currentUser={props.currentUser}
+                  refreshPage={props.refreshPage}
+                />
+                }
+                <div className='new-comment-button-div'>
+                  <button onClick={props.newCommentForm.bind(this)} className="btn btn-secondary btn-sm">reply</button>
                 </div>
               </div>
             )

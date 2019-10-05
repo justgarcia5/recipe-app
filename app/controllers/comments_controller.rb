@@ -3,7 +3,8 @@ class CommentsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @comments = Comment.all
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments.all
   end
 
   def create
@@ -12,8 +13,8 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        format.html { redirect_to @comment }
-        format.json { render :index, status: :created, location: @comment }
+        format.html { redirect_to @comments }
+        format.json { render :index, status: :created, location: @comments }
       else
         format.html { render :new }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

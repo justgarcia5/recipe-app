@@ -247,6 +247,8 @@ a {
   text-align: center;
   font-family: 'Manjari', sans-serif!important;
   padding-top: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 @media screen and (max-width: 500px) {
@@ -379,7 +381,7 @@ table, th, td {
   padding-top: 20px;
   margin: 60px auto;
   width: 500px;
-  height: 600px;
+  height: 660px;
   background-color: rgb(216, 216, 216);
   font-family: 'Manjari', sans-serif;
 
@@ -637,5 +639,18 @@ table, th, td {
 }
 
 .search-icon {
-  padding:10px;
+  padding: 10px;
+}
+
+.comment-form {
+  margin: auto;
+  width: 75%;
+  font-family: 'Manjari', sans-serif;
+  margin-bottom: 60px;
+}
+
+.new-comment-button-div {
+  margin: auto;
+  margin-top: 40px;
+  text-align: center;
 }
