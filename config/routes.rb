@@ -7,7 +7,7 @@ Rails.application.routes.draw do
 
   # resources :posts
   resources :recipes
-  # resources :comments
+  resources :comments
 
   get '/*path', to: 'pages#index', constraints: ->(request){ request.format.html? }
   root to: 'pages#index'

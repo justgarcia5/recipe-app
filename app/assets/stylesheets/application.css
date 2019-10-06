@@ -519,6 +519,12 @@ table, th, td {
   color: red;
 }
 
+.error-header {
+  color: red;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .error-list {
   margin-top: -14px;
 }

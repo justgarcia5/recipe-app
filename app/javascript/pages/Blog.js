@@ -8,14 +8,16 @@ class Blog extends React.Component {
     posts: [],
     addBlog: false,
     addComment: false,
+    postIds: [],
+    whichComment: false
   }
 
   componentDidMount = () => {
     fetch(`/posts.json`)
     .then((response) => response.json())
     .then((posts) => {
-      let postId = posts.map((post) => post.id)
-      this.setState({ posts: posts, postId: postId })
+      let post_id = posts.map((post) => post.id)
+      this.setState({ posts: posts, postIds: post_id })
     })
     .catch((errors) => console.log(errors))
   }
@@ -24,7 +26,7 @@ class Blog extends React.Component {
     this.setState({ addBlog: true })
   }
 
-  newCommentForm = () => {
+  newCommentForm = (id) => {
     this.setState({ addComment: true })
   }
 
@@ -33,8 +35,7 @@ class Blog extends React.Component {
   }
 
   render() {
-    let { addBlog, posts, postId, addComment } = this.state
-
+    let { addBlog, posts, postIds, addComment } = this.state
     return(
       <div>
         <div className='blog-div'>
@@ -56,12 +57,13 @@ class Blog extends React.Component {
         <div>
           <BlogCard
             posts={posts}
+            postIds={postIds}
             username={this.props.currentUser.username}
-            postId={postId}
             currentUser={this.props.currentUser}
             newCommentForm={this.newCommentForm}
             addComment={addComment}
             refreshPage={this.refreshPage}
+            commentSelector={this.commentSelector}
           />
         </div>
       </div>

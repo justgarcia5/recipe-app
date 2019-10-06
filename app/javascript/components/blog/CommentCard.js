@@ -38,7 +38,6 @@ class CommentCard extends React.Component {
                           </header>
                           <br/>
                           <div className="comment-post">
-                            <p>{comment.post_id}</p>
                             <p>{comment.body}</p>
                           </div>
                         </div>

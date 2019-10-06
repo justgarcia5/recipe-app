@@ -9,7 +9,6 @@ class BlogForm extends React.Component {
       body: '',
       username: this.props.currentUser.username,
     },
-    postId: [],
     errors: null,
     responseOk: false
   }

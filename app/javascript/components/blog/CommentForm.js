@@ -51,7 +51,7 @@ class CommentForm extends React.Component {
 
   render() {
     let { responseOk, errors, comment  } = this.state
-    // console.log(this.props.currentUser)
+
     return (
       <div>
         {responseOk && this.props.refreshPage()}
