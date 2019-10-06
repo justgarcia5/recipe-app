@@ -7,7 +7,7 @@ class Errors extends React.Component{
       <div>
         {errors &&
           <div className="error-div">
-            <h2 className="error-header">Errors:</h2>
+            <h2 className="error-header">The following errors have prevented you to save:</h2>
             <ul className="error-list">
               {Object.keys(errors).map((key, index) => {
                 return (

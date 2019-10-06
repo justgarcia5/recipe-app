@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
@@ -14,11 +14,11 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @post }
-        format.json { render :index, status: :created, location: @post }
+        format.html { redirect_to @posts }
+        format.json { render :index, status: :created, location: @posts }
       else
         format.html { render :new }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        format.json { render json: @post.errors, message: @post.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -28,6 +28,4 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :body, :username)
   end
-
-
 end

@@ -1,21 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 
-
-// function CommentForm(props) {
-//   // console.log(props.comments)
-//   const [body, setBody] = useState('');
-//   const [username, setUsername] = useState('')
-
-//   const handleSubmit = () => {
-
-//   }
+import Errors from '../Errors'
 
 class CommentForm extends React.Component {
   state= {
     comment: {
       body: '',
       username: '',
-    }
+    },
+    responseOk: false,
+    errors: null,
   }
 
   componentDidMount = () => {
@@ -28,7 +22,7 @@ class CommentForm extends React.Component {
   }
 
   handleSubmit = (e) => {
-    // e.preventDefault()
+    e.preventDefault()
     let { comment } = this.state
     fetch(`/posts/${this.props.postId}/comments.json`, {
       method: 'POST',
@@ -36,9 +30,17 @@ class CommentForm extends React.Component {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ comment: comment })
-    }).then((res) => res.json())
-    .then((comment) => comment)
-    .catch((errors) => console.log(errors))
+    }).then((response) => {
+      return response.json().then((json) => {
+        if(response.status === 201) {
+          this.setState({ responseOk: true })
+        } else {
+          this.setState({ responseOk: false, errors: json })
+        }
+        return json
+      })
+    }).catch((errors) => this.setState({ responseOk: false, errors: {"System Error": ["Unknown problem has occurred"]}})
+    )
   }
 
   handleChange = (event) => {
@@ -48,20 +50,29 @@ class CommentForm extends React.Component {
   }
 
   render() {
-    // console.log(this.props.currentUser)
+    let { responseOk, errors, comment  } = this.state
+
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Comment:
+      <div>
+        {responseOk && this.props.refreshPage()}
+        <Errors
+          errors={errors}
+        />
+        <form onSubmit={this.handleSubmit} className='comment-form'>
+          <label>Comment:</label>
           <textarea
             type="text"
-            value={this.state.comment.body}
+            value={comment.body}
             onChange={this.handleChange}
             name='body'
+            className='form-control'
           />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
+          <br/>
+          <div>
+            <button className='btn btn-success' type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
     );
   }
 }
