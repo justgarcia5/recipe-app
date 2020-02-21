@@ -1,16 +1,10 @@
+@import "~bootstrap/scss/bootstrap"; // never forget the semicolon at the end
+
 .search-result-q {
   font-size: 50px;
   text-align: center;
   padding-top: 36px;
   font-family: 'Manjari', sans-serif;
-}
-
-@media screen and (max-width: 500px) {
-  .search-result-q {
-    margin: 0;
-    padding-top: 17px;
-    font-size: 20px;
-  }
 }
 
 .navbar-right {
@@ -35,13 +29,6 @@
 
 .NavBar {
   height: 95px;
-  background-color: rgb(231, 205, 119);
-}
-
-@media screen and (max-width: 500px) {
-  .NavBar {
-    background-color: white;
-  }
 }
 
 a {
@@ -58,18 +45,8 @@ a {
   padding-right: 16px;
 }
 
-@media screen and (max-width: 500px) {
-  .NavBar b {
-    display: block;
-    color: rgb(12, 10, 10);
-    text-decoration: none;
-    font-size: 20px;
-    text-align: center;
-  }
-}
-
 .NavBar a:hover {
-  color: white;
+  color: black;
 }
 
 .NavBar ul {
@@ -82,13 +59,6 @@ a {
   text-align: center;
 }
 
-@media screen and (max-width: 700px) {
-  .input-form {
-    text-align: center;
-    margin: 0;
-  }
-}
-
 .input-form-button {
   font-size: 20px;
   margin-left: 10px;
@@ -98,19 +68,6 @@ a {
   cursor: pointer;
 
 }
-
-@media screen and (max-width: 788px) {
-  .input-form-button {
-    font-size: 15px;
-    margin-left: 20px;
-    padding: 8px;
-    border-radius: 5px;
-    background-color: rgb(220, 224, 220);
-    cursor: pointer;
-
-  }
-}
-
 
 .input-form-button:hover {
   background-color:  rgb(44, 124, 48);
@@ -125,28 +82,11 @@ a {
   border-radius: 5px;
 }
 
-@media screen and (max-width: 788px) {
-  .input {
-    width: 220px;
-    height: 30px;
-    font-size: 16px;
-  }
-}
-
-
 .landing-image {
   max-width: 90%;
   margin: auto;
   border-radius: 5px;
   background-color: rgb(216, 216, 216);
-}
-
-@media screen and (max-width: 500px) {
-  .landing-image {
-    max-width: 100%;
-    background-color: white;
-    border: 0
-  }
 }
 
 .search-result-container {
@@ -161,12 +101,6 @@ a {
   border-radius: 5px;
   max-height: 350px;
   max-width: 350px;
-}
-
-@media screen and (max-width: 570px) {
-  .recipe-image {
-    width: 260px;
-  }
 }
 
 .recipe-label {
@@ -187,15 +121,6 @@ a {
   opacity: .9;
   background-color: white;
 
-}
-
-@media screen and (max-width: 500px) {
-  .recipe-card {
-    width: 260px;
-    height: 420px;
-    margin: 0;
-    border-top: 1px grey;
-  }
 }
 
 .recipe-card:hover {
@@ -233,15 +158,6 @@ a {
   margin-right: 40px;
 }
 
-@media screen and (max-width: 500px) {
-  .recipe-detail-image {
-    max-width: 300px;
-    max-height: 300px;
-    padding: 0;
-    margin: 16px auto;
-  }
-}
-
 .recipe-detail-title {
   font-size: 50px;
   text-align: center;
@@ -251,28 +167,12 @@ a {
   margin-right: 50px;
 }
 
-@media screen and (max-width: 500px) {
-  .recipe-detail-title {
-    font-size: 30px;
-    text-align: center;
-    margin: 10px auto;
-    width: 300px;
-  }
-}
-
 .recipe-ingredients-list {
   margin-left: 70px;
   width: 550px;
   margin-top: 30px;
   font-family: 'Manjari', sans-serif;
   font-size: 18px;
-}
-
-@media screen and (max-width: 500px) {
-  .recipe-ingredients-list {
-    margin: 10px auto;
-    padding: 10px;
-  }
 }
 
 .recipe-ingredients-weight {
@@ -346,12 +246,6 @@ table, th, td {
   padding: 5px
 
 }
-@media screen and (max-width: 500px) {
-  .total-nutrients {
-    margin: 10px auto;
-    padding: 5px;
-  }
-}
 
 .daily-nutrients {
   padding: 100px;
@@ -365,12 +259,6 @@ table, th, td {
 .daily-nutrients td {
   font-size: 16px;
   padding: 5px;
-}
-
-@media screen and (max-width: 500px) {
-  .daily-nutrients {
-    margin: 10px;
-  }
 }
 
 .form-container {
@@ -424,18 +312,6 @@ table, th, td {
   background-color: rgb(181, 211, 157);
   cursor: pointer;
   text-align: center;
-}
-
-@media screen and (max-width: 788px) {
-  .login-button {
-    font-size: 10px;
-    margin-left: 20px;
-    padding: 8px;
-    border-radius: 5px;
-    background-color: rgb(181, 211, 157);
-    cursor: pointer;
-
-  }
 }
 
 .login-button:hover {
@@ -578,47 +454,7 @@ table, th, td {
 .comment-list figcaption {
   word-wrap: break-word;
 }
-@media (min-width: 768px) {
-  .comment-list .arrow:after, .comment-list .arrow:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-color: transparent;
-  }
-  .comment-list .panel.arrow.left:after, .comment-list .panel.arrow.left:before {
-    border-left: 0;
-  }
 
-  .comment-list .panel.arrow.left:before {
-    left: 0px;
-    top: 30px;
-    border-right-color: inherit;
-    border-width: 16px;
-  }
-
-  .comment-list .panel.arrow.left:after {
-    left: 1px;
-    top: 31px;
-    border-right-color: #FFFFFF;
-    border-width: 15px;
-  }
-
-  .comment-list .panel.arrow.right:before {
-    right: -16px;
-    top: 30px;
-    border-left-color: inherit;
-    border-width: 16px;
-  }
-
-  .comment-list .panel.arrow.right:after {
-    right: -14px;
-    top: 31px;
-    border-left-color: #FFFFFF;
-    border-width: 15px;
-  }
-}
 .comment-list .comment-post {
   margin-top: 6px;
 }

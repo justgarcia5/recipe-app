@@ -12,15 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2019_09_15_021857) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "comments", force: :cascade do |t|
     t.text "username"
     t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "post_id"
+    t.integer "post_id"
     t.index ["post_id"], name: "index_comments_on_post_id"
   end
 
@@ -29,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_09_15_021857) do
     t.integer "weight"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "recipe_id"
+    t.integer "recipe_id"
     t.index ["recipe_id"], name: "index_ingredients_on_recipe_id"
   end
 
@@ -39,7 +36,7 @@ ActiveRecord::Schema.define(version: 2019_09_15_021857) do
     t.text "username"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
@@ -52,26 +49,8 @@ ActiveRecord::Schema.define(version: 2019_09_15_021857) do
     t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.integer "user_id"
     t.index ["user_id"], name: "index_recipes_on_user_id"
   end
 
-  create_table "users", force: :cascade do |t|
-    t.string "email", default: "", null: false
-    t.string "encrypted_password", default: "", null: false
-    t.string "username", default: "", null: false
-    t.string "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean "favorites"
-    t.index ["email"], name: "index_users_on_email", unique: true
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-  end
-
-  add_foreign_key "comments", "posts"
-  add_foreign_key "ingredients", "recipes"
-  add_foreign_key "posts", "users"
-  add_foreign_key "recipes", "users"
 end
