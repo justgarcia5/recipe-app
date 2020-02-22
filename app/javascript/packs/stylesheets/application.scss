@@ -1,10 +1,15 @@
-@import "~bootstrap/scss/bootstrap"; // never forget the semicolon at the end
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css?family=Oleo+Script&display=swap');
 
 .search-result-q {
   font-size: 50px;
   text-align: center;
   padding-top: 36px;
   font-family: 'Manjari', sans-serif;
+}
+
+.search-result-div {
+  margin-top: 100px;
 }
 
 .navbar-right {
@@ -114,7 +119,7 @@ a {
 }
 
 .recipe-card {
-  margin: 30px auto;
+  margin: 60px;
   padding: 30px;
   border-radius: 5px;
   width: 350px;
@@ -422,13 +427,6 @@ table, th, td {
   font-family: 'Manjari', sans-serif;
 }
 
-.favorites-landing {
-  background-color: rgb(216, 216, 216);
-  max-width: 90%;
-  margin: auto;
-  border-radius: 5px;
-}
-
 .favorites-div {
   padding-top: 100px;
 }
@@ -472,10 +470,6 @@ table, th, td {
   font-size: 50px;
 }
 
-.container {
-  font-family: 'Manjari', sans-serif;
-}
-
 .new-blog-button-div {
   text-align: center;
 }
@@ -495,4 +489,37 @@ table, th, td {
   margin: auto;
   margin-top: 40px;
   text-align: center;
+}
+
+.search-bg {
+  // margin-top: 68px;
+  background:
+         linear-gradient(
+           rgba(0, 0, 0, 0.432),
+           rgba(0, 0, 0, 0.432)
+         ),
+         url('https://3.bp.blogspot.com/-zF7_8YHOOT4/VSFOSWHwukI/AAAAAAAADeE/wdbDbs6JbRg/s1600/19.jpg');
+     }
+
+.search-bg form {
+  width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+#search-bar {
+  padding: 150px 0;
+}
+
+#search-bar h1 {
+  font-size: 80px;
+  text-align: center;
+  font-family: 'Oleo Script', ;
+}
+
+#search-bar h2 {
+  font-size: 58px;
+  text-align: center;
+  padding-bottom: 50px;
+  font-family: 'Oleo Script', ;
 }

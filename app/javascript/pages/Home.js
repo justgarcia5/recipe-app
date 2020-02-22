@@ -44,10 +44,12 @@ const Home = props => {
   return (
     <div className='recipe-input'>
 
-      <div className="container">
+      <div className="search-bg">
         <br/>
-        <div className="row justify-content-center">
+        <div id="search-bar" className="row justify-content-center">
           <div className="col-12 col-md-10 col-lg-8">
+            <h1 className="text-white">Welcome to Recipes App!</h1>
+            <h2 className="text-white">Over 10,000 Recipes</h2>
             <form onSubmit={handleQuery}>
               <div className="card-body row no-gutters align-items-center">
                 <div className='search-icon'>
@@ -64,27 +66,29 @@ const Home = props => {
           </div>
         </div>
       </div>
-      <div>
-      <Errors
-        errors={errors}
-      />
+      <div className="search-result-div">
+        <div>
+          <Errors
+            errors={errors}
+          />
+        </div>
+        <div>
+          {!responseOk &&
+            <h2 className='search-result-q'>Popular Recipes</h2>
+          }
+        </div>
+        <div>
+          {responseOk &&
+            <h2 className='search-result-q'>Results for {data.q}...</h2>
+          }
+        </div>
+        <RecipeCards
+          response={responseOk}
+          data={data}
+          popular={popular}
+          {...props}
+        />
       </div>
-      <div>
-        {!responseOk &&
-          <h2 className='search-result-q'>Popular Recipes</h2>
-        }
-      </div>
-      <div>
-        {responseOk &&
-          <h2 className='search-result-q'>Results for {data.q}...</h2>
-        }
-      </div>
-      <RecipeCards
-        response={responseOk}
-        data={data}
-        popular={popular}
-        {...props}
-      />
     </div>
   )
 }
