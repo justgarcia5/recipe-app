@@ -1,5 +1,8 @@
 @import "~bootstrap/scss/bootstrap";
+@import "@fortawesome/fontawesome-free";
 @import url('https://fonts.googleapis.com/css?family=Oleo+Script&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Special+Elite&display=swap');
 
 .search-result-q {
   font-size: 50px;
@@ -10,6 +13,10 @@
 
 .search-result-div {
   margin-top: 100px;
+}
+
+.serach-icon i {
+  margin: 0
 }
 
 .navbar-right {
@@ -45,7 +52,7 @@ a {
   color: rgb(12, 10, 10);
   text-decoration: none!important;
   font-size: 35px;
-  font-family: 'Monoton', cursive!important;
+  font-family: 'Special Elite', ;
   float: left;
   padding-right: 16px;
 }

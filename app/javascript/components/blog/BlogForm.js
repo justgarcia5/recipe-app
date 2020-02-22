@@ -1,69 +1,73 @@
-import React from 'react'
+import React from "react";
 
-import Errors from '../../components/Errors'
+import Errors from "../../components/Errors";
 
 class BlogForm extends React.Component {
   state = {
     post: {
-      title: '',
-      body: '',
-      username: this.props.currentUser.username,
+      title: "",
+      body: "",
+      username: this.props.currentUser.username
     },
     errors: null,
     responseOk: false
-  }
+  };
 
-  handleSubmit = (e) => {
-    e.preventDefault()
-    let { post } = this.state
+  handleSubmit = e => {
+    e.preventDefault();
+    let { post } = this.state;
     fetch(`/posts.json`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({ post: post })
-    }).then((response) => {
-      return response.json().then((json) => {
-        if(response.status === 201) {
-          this.setState({ responseOk: true, addBlog: false })
-        } else {
-          this.setState({ responseOk: false, errors: json, addBlog: true })
-        }
-        return json
+    })
+      .then(response => {
+        return response.json().then(json => {
+          if (response.status === 201) {
+            this.setState({ responseOk: true, addBlog: false });
+          } else {
+            this.setState({ responseOk: false, errors: json, addBlog: true });
+          }
+          return json;
+        });
       })
-    }).catch((errors) => this.setState({ responseOk: false, errors: {"System Error": ["Unknown problem has occurred"]}})
-    )
-  }
+      .catch(errors =>
+        this.setState({
+          responseOk: false,
+          errors: { "System Error": ["Unknown problem has occurred"] }
+        })
+      );
+  };
 
-  handleChange = (event) => {
-    let { post } = this.state
-    post[event.target.name] = event.target.value
-    this.setState({ post: post })
-  }
+  handleChange = event => {
+    let { post } = this.state;
+    post[event.target.name] = event.target.value;
+    this.setState({ post: post });
+  };
 
   render() {
-    let { responseOk, errors, post } = this.state
-    console.log(post, this.props.currentUser.id)
+    let { responseOk, errors, post } = this.state;
+    console.log(post, this.props.currentUser.id);
 
-    return(
+    return (
       <div>
         {responseOk && this.props.refreshPage()}
-        <Errors
-          errors={errors}
-        />
-        <form onSubmit={this.handleSubmit.bind(this)} className='blog-form'>
+        <Errors errors={errors} />
+        <form onSubmit={this.handleSubmit.bind(this)} className="blog-form">
           <label htmlFor="title">Title:</label>
-          <br/>
+          <br />
           <input
             value={post.title}
             onChange={this.handleChange}
             type="input"
             name="title"
             className="form-control"
-            />
-          <br/>
+          />
+          <br />
           <label htmlFor="blog">Blog:</label>
-          <br/>
+          <br />
           <textarea
             value={post.body}
             onChange={this.handleChange}
@@ -71,13 +75,15 @@ class BlogForm extends React.Component {
             name="body"
             className="form-control"
           />
-          <br/>
+          <br />
           <div>
-            <button className='btn btn-success' type="submit">Submit</button>
+            <button className="btn btn-success" type="submit">
+              Submit
+            </button>
           </div>
         </form>
       </div>
-    )
+    );
   }
 }
 

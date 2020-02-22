@@ -1,54 +1,55 @@
-import React from 'react'
+import React from "react";
 
 class IngredientsSubmit extends React.Component {
   state = {
     ingredient: {
-        text: [],
-        weight: []
+      text: [],
+      weight: []
     }
-  }
+  };
 
   componentDidMount = () => {
     let text = this.props.ingredients.map((ingredient, index) => {
-      return ingredient.map((ingredient, index) => ingredient.text)
-    })
+      return ingredient.map((ingredient, index) => ingredient.text);
+    });
 
     let weight = this.props.ingredients.map((ingredient, index) => {
-      return ingredient.map((ingredient) => ingredient.weight)
-    })
-    console.log(text, weight)
-    this.setState({ ingredient: {
-      text: text,
-      weight: weight,
-    }})
-  }
+      return ingredient.map(ingredient => ingredient.weight);
+    });
+    console.log(text, weight);
+    this.setState({
+      ingredient: {
+        text: text,
+        weight: weight
+      }
+    });
+  };
 
-  ingredientsSubmit = (e) => {
-    e.preventDefault()
-    this.props.favoritesSubmit()
-    let { ingredient } = this.state
+  ingredientsSubmit = e => {
+    e.preventDefault();
+    this.props.favoritesSubmit();
+    let { ingredient } = this.state;
     fetch(`/recipes/${this.props.filteredRecipeId}/ingredients.json`, {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json'
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({ ingredient: ingredient })
-    }).then((response) => response.json())
-    .then((ingredients) => ingredients)
-    .catch((errors) => console.log(errors))
-  }
+    })
+      .then(response => response.json())
+      .then(ingredients => ingredients)
+      .catch(errors => console.log(errors));
+  };
 
   render() {
-
-    return(
+    return (
       <div>
-        {
-          !this.props.responseOk &&
+        {!this.props.responseOk && (
           <p onClick={this.ingredientsSubmit.bind(this)}>+ Favorites</p>
-        }
+        )}
       </div>
-    )
+    );
   }
 }
 
-export default IngredientsSubmit
+export default IngredientsSubmit;
