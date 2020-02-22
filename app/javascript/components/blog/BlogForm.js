@@ -43,6 +43,7 @@ class BlogForm extends React.Component {
 
   render() {
     let { responseOk, errors, post } = this.state
+    console.log(post, this.props.currentUser.id)
 
     return(
       <div>

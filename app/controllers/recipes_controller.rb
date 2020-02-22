@@ -3,7 +3,7 @@ class RecipesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-      @recipes = current_user.recipes.all
+      @recipes = Recipe.all
   end
 
   def show
@@ -14,7 +14,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = current_user.recipes.build(recipe_params)
+    @recipe = Recipe.create(recipe_params)
 
     respond_to do |format|
       if @recipe.save
@@ -50,7 +50,8 @@ class RecipesController < ApplicationController
       :image,
       :source,
       :url,
-      :totalWeight
+      :totalWeight,
+      :user_id
     )
   end
 
