@@ -80,15 +80,11 @@ const Home = props => {
       </div>
       <div className="search-result-div">
         <div>
-<<<<<<< HEAD
-          <Errors errors={errors} />
-=======
           {errors &&
             <Errors
               errors={errors}
             />
           }
->>>>>>> d9c2f7cb96c8363798d5fce59485d30d578d73ea
         </div>
         <div>
           {!responseOk && <h2 className="search-result-q">Popular Recipes</h2>}
