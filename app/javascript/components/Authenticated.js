@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -12,39 +12,34 @@ import Favorites from '../pages/Favorites'
 import FavoritesDetailPage from '../pages/FavoritesDetailPage'
 import Blog from '../pages/Blog'
 
-class Authenticated extends React.Component {
-  state = {
-    currentUser: this.props.current_user,
-    recipes: []
-  }
+const Authenticated = props => {
+  const [currentUser, setCurrentUser] = useState(props.current_user)
+  const [recipes, setRecipes] = useState()
 
-  componentDidMount = () => {
+  useEffect(() => {
     fetch('/recipes.json')
     .then((response) => response.json())
     .then((recipes) => {
-      this.setState({recipes: recipes})
+      setRecipes({recipes: recipes})
     })
-  }
+  }, []);
 
-  render() {
-    let { currentUser, recipes } = this.state
-    return (
-      <div>
-        <Router>
-          <div>
-            <Switch>
-              <Route path='/' exact component={Home} />
-              <Route path='/recipe-detail/:index/:label' exact render={(props) => <RecipeDetail currentUser={currentUser} recipes={recipes} {...props} />} />
-              <Route path='/members/favorites' exact render={(props) => <Favorites currentUser={currentUser} {...props} />} />
-              <Route path='/members/blogs' exact render={(props) => <Blog currentUser={currentUser} {...props} />} />
-              <Route path='/members/favorites/detail/:id' exact render={(props) => <FavoritesDetailPage currentUser={currentUser} {...props} />} />
-              <Route render={() => <p className='not-found'>Page not found!</p>} />
-            </Switch>
-          </div>
-        </Router>
-      </div>
-    )
-  }
+  return (
+    <div>
+      <Router>
+        <div>
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/recipe-detail/:index/:label' exact render={(props) => <RecipeDetail currentUser={currentUser} recipes={recipes} {...props} />} />
+            <Route path='/members/favorites' exact render={(props) => <Favorites currentUser={currentUser} {...props} />} />
+            <Route path='/members/blogs' exact render={(props) => <Blog currentUser={currentUser} {...props} />} />
+            <Route path='/members/favorites/detail/:id' exact render={(props) => <FavoritesDetailPage currentUser={currentUser} {...props} />} />
+            <Route render={() => <p className='not-found'>Page not found!</p>} />
+          </Switch>
+        </div>
+      </Router>
+    </div>
+  )
 }
 
 export default Authenticated;

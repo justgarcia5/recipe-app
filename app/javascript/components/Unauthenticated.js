@@ -9,22 +9,20 @@ import {
 import RecipeDetail from '../pages/RecipeDetail';
 import Home from '../pages/Home'
 
-class Unauthenticated extends React.Component {
-  render() {
-    return (
-      <div>
-        <Router>
-          <div>
-            <Switch>
-              <Route path='/' exact component={Home} />
-              <Route path='/recipe-detail/:index/:label' exact component={RecipeDetail} />} />
-              <Route render={() => <p className='not-found'>Page not found!</p>} />
-            </Switch>
-          </div>
-        </Router>
-      </div>
-    )
-  }
+const Unauthenticated = () => {
+  return (
+    <div>
+      <Router>
+        <div>
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/recipe-detail/:index/:label' exact component={RecipeDetail} />} />
+            <Route render={() => <p className='not-found'>Page not found!</p>} />
+          </Switch>
+        </div>
+      </Router>
+    </div>
+  )
 }
 
 export default Unauthenticated;

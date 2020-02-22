@@ -6,24 +6,7 @@ class FavoritesSubmit extends React.Component {
   state = {
     checked: false,
     responseOk: false,
-    filteredLabels: false,
-    filteredRecipeId: '',
     recipe:
-      {
-        calories: '',
-        totalWeight: '',
-        image: '',
-        label: '',
-        source: '',
-        url: '',
-      },
-  }
-
-  componentDidMount = () => {
-    let recipeId = this.props.recipes.filter((recipe) => recipe.user_id  )
-    this.setState({
-      filteredRecipeId: recipeId,
-      recipe:
       {
         calories: this.props.recipe.calories,
         totalWeight: this.props.recipe.totalWeight,
@@ -31,15 +14,15 @@ class FavoritesSubmit extends React.Component {
         label: this.props.recipe.label,
         source: this.props.recipe.source,
         url: this.props.recipe.url,
+        user_id: this.props.currentUser.id
       },
-    })
   }
 
   favoritesSubmit = (e) => {
     let { recipe, checked } = this.state
     let check = checked === false ? true : false
     if(check === true) {
-      console.log("Favorite successfully submitted");
+      console.log(recipe);
       fetch('/recipes.json', {
         method: 'POST',
         headers: {
@@ -60,22 +43,14 @@ class FavoritesSubmit extends React.Component {
   }
 
   render () {
-    // console.log(this.props.currentUser.id, this.props.recipes, this.state.filteredRecipeId)
-
     let { filteredLabels, responseOk } = this.state
     let favPointStyle = {
       cursor: 'pointer',
       color: 'green',
       fontSize: '26px'
     }
-
     return (
       <div style={favPointStyle}>
-        {
-          filteredLabels &&
-          <p>Added to Favorites</p>
-        }
-
         <IngredientsSubmit
           favoritesSubmit={this.favoritesSubmit.bind(this)}
           ingredients={this.props.ingredients}
