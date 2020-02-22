@@ -68,9 +68,11 @@ const Home = props => {
       </div>
       <div className="search-result-div">
         <div>
-          <Errors
-            errors={errors}
-          />
+          {errors &&
+            <Errors
+              errors={errors}
+            />
+          }
         </div>
         <div>
           {!responseOk &&
