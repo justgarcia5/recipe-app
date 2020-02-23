@@ -465,7 +465,7 @@ table, th, td {
 }
 
 .blog-div {
-  /* text-align: center; */
+  text-align: center;
   margin: auto;
   width: 60%;
   font-family: 'Manjari', sans-serif;
@@ -529,4 +529,8 @@ table, th, td {
   text-align: center;
   padding-bottom: 50px;
   font-family: 'Oleo Script', ;
+}
+
+.img-responsive {
+  width: 130px;
 }
