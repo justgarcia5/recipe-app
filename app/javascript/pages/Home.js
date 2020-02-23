@@ -79,13 +79,7 @@ const Home = props => {
         </div>
       </div>
       <div className="search-result-div">
-        <div>
-          {errors &&
-            <Errors
-              errors={errors}
-            />
-          }
-        </div>
+        <div>{errors && <Errors errors={errors} />}</div>
         <div>
           {!responseOk && <h2 className="search-result-q">Popular Recipes</h2>}
         </div>

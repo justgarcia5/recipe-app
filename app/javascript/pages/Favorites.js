@@ -8,7 +8,7 @@ const Favorites = () => {
     fetch(`/recipes.json`)
       .then(response => response.json())
       .then(recipes => {
-        setRecipes(recipes)
+        setRecipes(recipes);
       });
   }, []);
 
@@ -38,6 +38,6 @@ const Favorites = () => {
       </div>
     </div>
   );
-}
+};
 
 export default Favorites;
