@@ -499,14 +499,16 @@ table, th, td {
 }
 
 .search-bg {
-  // margin-top: 68px;
   background:
-         linear-gradient(
-           rgba(0, 0, 0, 0.432),
-           rgba(0, 0, 0, 0.432)
-         ),
-         url('https://3.bp.blogspot.com/-zF7_8YHOOT4/VSFOSWHwukI/AAAAAAAADeE/wdbDbs6JbRg/s1600/19.jpg');
-     }
+    linear-gradient(
+      rgba(0, 0, 0, 0.432),
+      rgba(0, 0, 0, 0.432)
+    ),
+    url('https://3.bp.blogspot.com/-zF7_8YHOOT4/VSFOSWHwukI/AAAAAAAADeE/wdbDbs6JbRg/s1600/19.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+}
 
 .search-bg form {
   width: 600px;
