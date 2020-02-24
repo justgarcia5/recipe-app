@@ -1,4 +1,6 @@
 @import "~bootstrap/scss/bootstrap";
+@import "./recipe_cards.scss";
+
 @import "@fortawesome/fontawesome-free";
 @import url('https://fonts.googleapis.com/css?family=Oleo+Script&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Manjari&display=swap');
@@ -510,14 +512,14 @@ table, th, td {
 
 }
 
-.search-bg form {
-  width: 600px;
-  margin: auto;
-  text-align: center;
-}
+// .search-bg form {
+//   width: 600px;
+//   margin: auto;
+//   text-align: center;
+// }
 
 #search-bar {
-  padding: 150px 0;
+  padding: 50px 0;
 }
 
 #search-bar h1 {
@@ -535,4 +537,12 @@ table, th, td {
 
 .img-responsive {
   width: 130px;
+}
+
+.app-bg {
+  background-color: rgb(228, 226, 226);
+}
+
+.container {
+  width: 120%;
 }
